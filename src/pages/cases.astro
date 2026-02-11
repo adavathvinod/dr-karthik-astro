@@ -1,0 +1,158 @@
+---
+import Layout from '@/layouts/Layout.astro';
+import { Header } from '@/components/Header';
+import { Footer } from '@/components/Footer';
+import { FloatingButtons } from '@/components/FloatingButtons';
+import { BookingForm } from '@/components/BookingForm';
+import { AlertTriangle } from 'lucide-react';
+
+const cases = [
+  {
+    id: 1,
+    title: "Total Knee Replacement",
+    description: "Successful knee replacement surgery restoring full mobility",
+    image: "/case-knee-after.jpg",
+  },
+  {
+    id: 2,
+    title: "Hip Joint Replacement",
+    description: "Total hip arthroplasty for pain-free movement",
+    image: "/case-hip-after.jpg",
+  },
+  {
+    id: 3,
+    title: "Fracture Fixation",
+    description: "Surgical fixation ensuring complete bone healing",
+    image: "/case-fracture-after.jpg",
+  },
+  {
+    id: 4,
+    title: "ACL Reconstruction",
+    description: "Ligament reconstruction for return to active lifestyle",
+    image: "/case-acl-after.jpg",
+  }
+];
+
+const breadcrumbSchema = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Home",
+      "item": "https://drkmortho.com/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Before & After Cases",
+      "item": "https://drkmortho.com/cases"
+    }
+  ]
+};
+
+const casesPageStructuredData = {
+  "@context": "https://schema.org",
+  "@graph": [
+    breadcrumbSchema,
+    {
+      "@type": "WebPage",
+      "name": "Before & After Cases - Dr. Karthik Manchala",
+      "description": "View successful orthopaedic treatment outcomes including knee replacement, hip replacement, fracture fixation, and more.",
+      "url": "https://drkmortho.com/cases"
+    },
+    {
+      "@type": "ImageGallery",
+      "name": "Orthopaedic Treatment Results",
+      "description": "Before and after images of orthopaedic surgeries performed by Dr. Karthik Manchala",
+      "numberOfItems": cases.length
+    }
+  ]
+};
+---
+
+<Layout
+  title="Before & After Cases - Treatment Results"
+  description="View successful orthopaedic treatment results by Dr. Karthik Manchala. Before and after cases of knee replacement, hip replacement, fracture fixation, ACL reconstruction, and spine surgery in Hyderabad."
+  keywords="knee replacement before after, hip surgery results, fracture treatment cases, ACL reconstruction recovery, orthopaedic surgery success, treatment outcomes hyderabad"
+  canonicalUrl="/cases"
+  structuredData={casesPageStructuredData}
+>
+  <div class="min-h-screen bg-background">
+    <Header currentPath="/cases" client:load />
+
+    {/* Page Header */}
+    <section class="bg-gradient-to-b from-secondary/50 to-background py-16">
+      <div class="section-container text-center">
+        <span class="text-primary font-semibold text-sm uppercase tracking-wider">
+          Treatment Results
+        </span>
+        <h1 class="text-4xl md:text-5xl font-bold text-foreground mt-3 mb-4">
+          Cases
+        </h1>
+        <p class="text-muted-foreground text-lg max-w-2xl mx-auto">
+          See the successful treatment outcomes achieved by Dr. Karthik Manchala
+        </p>
+      </div>
+    </section>
+
+    {/* Cases Grid */}
+    <section class="section-padding">
+      <div class="section-container">
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-10">
+          {cases.map((caseItem) => (
+            <article key={caseItem.id} class="medical-card overflow-hidden">
+              <figure class="relative bg-black flex items-center justify-center">
+                <img
+                  src={caseItem.image}
+                  alt={`${caseItem.title} - Treatment result by Dr. Karthik Manchala`}
+                  class="w-full h-auto max-h-[500px] object-contain"
+                  loading="lazy"
+                />
+              </figure>
+              <div class="p-6">
+                <h2 class="font-semibold text-xl text-foreground mb-2">
+                  {caseItem.title}
+                </h2>
+                <p class="text-muted-foreground text-sm">
+                  {caseItem.description}
+                </p>
+              </div>
+            </article>
+          ))}
+        </div>
+
+        {/* Disclaimer */}
+        <aside class="mt-12 p-6 bg-muted/50 rounded-xl border border-border">
+          <div class="flex items-start gap-4">
+            <AlertTriangle
+              class="w-6 h-6 text-accent flex-shrink-0 mt-0.5"
+              aria-hidden="true"
+            />
+            <div>
+              <h3 class="font-semibold text-foreground mb-2">
+                Medical Disclaimer
+              </h3>
+              <p class="text-sm text-muted-foreground leading-relaxed">
+                Individual results may vary. The images and descriptions shown are
+                representative of typical treatment outcomes. Every patient's
+                condition is unique, and treatment results depend on various
+                factors including the severity of the condition, patient
+                compliance, and individual healing response. Please consult with
+                Dr. Karthik Manchala for a personalized assessment and treatment
+                plan.
+              </p>
+            </div>
+          </div>
+        </aside>
+      </div>
+    </section>
+
+    {/* Booking Form */}
+    <BookingForm client:load />
+
+    <Footer client:load />
+    <FloatingButtons client:load />
+  </div>
+</Layout>

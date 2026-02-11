@@ -1,0 +1,101 @@
+---
+import Layout from '@/layouts/Layout.astro';
+import { Header } from '@/components/Header';
+import { Footer } from '@/components/Footer';
+import { FloatingButtons } from '@/components/FloatingButtons';
+import { ServicesSection } from '@/components/ServicesSection';
+import { BookingForm } from '@/components/BookingForm';
+
+const servicesForSchema = [
+  { name: "Knee & Hip Joint Replacement", description: "Advanced joint replacement surgery for knee and hip arthritis, restoring mobility and eliminating pain." },
+  { name: "Arthroscopic Surgery", description: "Minimally invasive keyhole surgery for joint problems with faster recovery and less scarring." },
+  { name: "Fracture Fixation", description: "Expert treatment of all types of bone fractures using modern fixation techniques." },
+  { name: "Ligament Reconstruction", description: "ACL, PCL and other ligament reconstruction surgery for sports injuries." },
+  { name: "Back Pain Management", description: "Comprehensive treatment for chronic back pain, disc herniation and spinal conditions." },
+  { name: "Sports Injury Treatment", description: "Specialized care for athletes and sports-related injuries." },
+  { name: "Shoulder Surgery", description: "Treatment for rotator cuff tears, frozen shoulder and other shoulder conditions." }
+];
+
+const breadcrumbSchema = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Home",
+      "item": "https://drkmortho.com/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Services",
+      "item": "https://drkmortho.com/services"
+    }
+  ]
+};
+
+const medicalServiceSchema = {
+  "@context": "https://schema.org",
+  "@type": "ItemList",
+  "name": "Orthopaedic Services by Dr. Karthik Manchala",
+  "itemListElement": servicesForSchema.map((service, index) => ({
+    "@type": "ListItem",
+    "position": index + 1,
+    "item": {
+      "@type": "MedicalProcedure",
+      "name": service.name,
+      "description": service.description,
+      "procedureType": "SurgicalProcedure"
+    }
+  }))
+};
+
+const servicesPageStructuredData = {
+  "@context": "https://schema.org",
+  "@graph": [
+    breadcrumbSchema,
+    medicalServiceSchema,
+    {
+      "@type": "WebPage",
+      "name": "Orthopaedic Services - Dr. Karthik Manchala",
+      "description": "Comprehensive orthopaedic services including joint replacement, arthroscopy, fracture treatment, and sports injury care in Hyderabad.",
+      "url": "https://drkmortho.com/services"
+    }
+  ]
+};
+---
+
+<Layout
+  title="Orthopaedic Services & Treatments"
+  description="Expert orthopaedic treatments in Hyderabad - Knee & Hip Replacement, Arthroscopic Surgery, Fracture Fixation, Ligament Reconstruction, Back Pain Treatment, Sports Injuries. Advanced care by Dr. Karthik Manchala."
+  keywords="joint replacement hyderabad, arthroscopy surgery, fracture treatment manikonda, ligament reconstruction, back pain doctor, sports injury treatment, knee replacement cost, hip replacement surgery"
+  canonicalUrl="/services"
+  structuredData={servicesPageStructuredData}
+>
+  <div class="min-h-screen bg-background">
+    <Header currentPath="/services" client:load />
+
+    {/* Page Header */}
+    <section class="bg-gradient-to-b from-secondary/50 to-background py-16">
+      <div class="section-container text-center">
+        <span class="text-primary font-semibold text-sm uppercase tracking-wider">What We Offer</span>
+        <h1 class="text-4xl md:text-5xl font-bold text-foreground mt-3 mb-4">
+          Our Services
+        </h1>
+        <p class="text-muted-foreground text-lg max-w-2xl mx-auto">
+          Comprehensive orthopaedic care with advanced treatment options for all bone and joint conditions.
+        </p>
+      </div>
+    </section>
+
+    {/* All Services */}
+    <ServicesSection showAll client:load />
+
+    {/* Booking Form */}
+    <BookingForm client:load />
+
+    <Footer client:load />
+    <FloatingButtons client:load />
+  </div>
+</Layout>

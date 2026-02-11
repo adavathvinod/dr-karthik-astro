@@ -1,0 +1,146 @@
+---
+import Layout from '@/layouts/Layout.astro';
+import { Header } from '@/components/Header';
+import { Footer } from '@/components/Footer';
+import { FloatingButtons } from '@/components/FloatingButtons';
+import { HeroSlider } from '@/components/HeroSlider';
+import { ServicesSection } from '@/components/ServicesSection';
+import { ReviewsSection } from '@/components/ReviewsSection';
+import { ClinicTimings } from '@/components/ClinicTimings';
+import { BookingForm } from '@/components/BookingForm';
+import { Button } from '@/components/ui/button';
+import { Award, Users, Calendar, Stethoscope } from 'lucide-react';
+
+const stats = [
+  { icon: Calendar, value: "12+", label: "Years Experience" },
+  { icon: Users, value: "10,000+", label: "Happy Patients" },
+  { icon: Award, value: "4.9★", label: "Google Rating" },
+  { icon: Stethoscope, value: "15+", label: "Treatments" },
+];
+
+const physicianSchema = {
+  "@context": "https://schema.org",
+  "@type": "Physician",
+  "name": "Dr. Karthik Manchala",
+  "jobTitle": "Orthopaedic, Joint Replacement & Arthroscopic Surgeon",
+  "description": "Orthopaedic Surgeon with 12+ years of experience specializing in joint replacement, fracture fixation, and arthroscopy.",
+  "image": "https://drkmortho.com/doctor-portrait.jpg",
+  "telephone": "+91-6281894631",
+  "email": "info@drkmortho.com",
+  "medicalSpecialty": ["Orthopedic Surgery", "Joint Replacement", "Arthroscopy"],
+};
+
+const clinicSchema = {
+  "@context": "https://schema.org",
+  "@type": "MedicalClinic",
+  "name": "Dr. Karthik Manchala Ortho Clinic",
+  "description": "Orthopaedic clinic specializing in joint replacement, arthroscopy, and fracture treatment.",
+  "image": "https://drkmortho.com/clinic-entrance.png",
+  "telephone": "+91-6281894631",
+  "email": "info@drkmortho.com",
+  "url": "https://drkmortho.com",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "Rd Number 25, Alkapur Township",
+    "addressLocality": "Manikonda, Hyderabad",
+    "addressRegion": "Telangana",
+    "postalCode": "500089",
+    "addressCountry": "IN"
+  },
+  "openingHoursSpecification": [
+    {
+      "@type": "OpeningHoursSpecification",
+      "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"],
+      "opens": "10:00",
+      "closes": "14:00"
+    },
+    {
+      "@type": "OpeningHoursSpecification",
+      "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"],
+      "opens": "17:00",
+      "closes": "21:00"
+    },
+    {
+      "@type": "OpeningHoursSpecification",
+      "dayOfWeek": "Sunday",
+      "opens": "11:00",
+      "closes": "14:00"
+    }
+  ],
+  "areaServed": "IN"
+};
+
+const homePageStructuredData = {
+  "@context": "https://schema.org",
+  "@graph": [
+    physicianSchema,
+    clinicSchema,
+    {
+      "@type": "WebSite",
+      "name": "Dr. Karthik Manchala Ortho Clinic",
+      "url": "https://drkmortho.com",
+      "potentialAction": {
+        "@type": "SearchAction",
+        "target": "https://drkmortho.com/search?q={search_term_string}",
+        "query-input": "required name=search_term_string"
+      }
+    }
+  ]
+};
+---
+
+<Layout
+  title="Best Orthopaedic Doctor in Hyderabad"
+  description="Dr. Karthik Manchala - Trusted orthopaedic surgeon in Manikonda, Hyderabad with 12+ years experience. Expert in joint replacement, fracture fixation, arthroscopy & sports injuries. 4.9★ Google rated. Book appointment now!"
+  keywords="orthopaedic doctor hyderabad, bone specialist manikonda, joint replacement surgery hyderabad, knee pain treatment, hip replacement surgeon, fracture treatment telangana, arthroscopy hyderabad, sports injury doctor"
+  canonicalUrl="/"
+  structuredData={homePageStructuredData}
+>
+  <div class="min-h-screen bg-background">
+    <Header currentPath="/" client:load />
+    
+    {/* Hero Section */}
+    <HeroSlider client:load />
+
+    {/* Stats Section */}
+    <section class="relative -mt-16 z-10">
+      <div class="section-container">
+        <div class="bg-card rounded-2xl shadow-elevated p-6 md:p-8 grid grid-cols-2 md:grid-cols-4 gap-6 md:gap-8">
+          {stats.map((stat, index) => (
+            <div key={index} class="text-center">
+              <div class="inline-flex items-center justify-center w-12 h-12 rounded-xl bg-secondary mb-3">
+                <stat.icon class="w-6 h-6 text-primary" />
+              </div>
+              <p class="text-2xl md:text-3xl font-bold text-foreground">{stat.value}</p>
+              <p class="text-sm text-muted-foreground">{stat.label}</p>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    {/* Services Preview */}
+    <ServicesSection client:load />
+
+    {/* View All Services Button */}
+    <div class="text-center pb-12 bg-background">
+      <a href="/services">
+        <Button variant="outline" size="lg">
+          View All Services
+        </Button>
+      </a>
+    </div>
+
+    {/* Clinic Timings */}
+    <ClinicTimings client:load />
+
+    {/* Reviews */}
+    <ReviewsSection client:load />
+
+    {/* Booking Form */}
+    <BookingForm client:load />
+
+    <Footer client:load />
+    <FloatingButtons client:load />
+  </div>
+</Layout>

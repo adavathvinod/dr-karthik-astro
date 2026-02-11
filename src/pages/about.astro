@@ -1,0 +1,220 @@
+---
+import Layout from '@/layouts/Layout.astro';
+import { Header } from '@/components/Header';
+import { Footer } from '@/components/Footer';
+import { FloatingButtons } from '@/components/FloatingButtons';
+import { BookingForm } from '@/components/BookingForm';
+import {
+  Award,
+  GraduationCap,
+  Stethoscope,
+  Heart,
+  Calendar,
+  CheckCircle2
+} from 'lucide-react';
+
+const credentials = [
+  "MBBS from Chalmeda Ananda Rao Institute of Medical Sciences, Karimnagar",
+  "DNB Orthopaedics from P.D. Hinduja Hospital, Mumbai",
+  "Observership in Joint Replacement Surgery at Sunshine Hospitals",
+];
+
+const expertise = [
+  "Knee & Hip Joint Replacement",
+  "Arthroscopic Surgery",
+  "Fracture Fixation & Trauma Care",
+  "Ligament Reconstruction",
+  "Back Pain Management",
+  "Sports Injury Treatment",
+];
+
+const physicianSchema = {
+  "@context": "https://schema.org",
+  "@type": "Physician",
+  "name": "Dr. Karthik Manchala",
+  "jobTitle": "Orthopaedic, Joint Replacement & Arthroscopic Surgeon",
+  "description":
+    "Orthopaedic Surgeon with 12+ years of experience specializing in joint replacement, fracture fixation, and arthroscopy.",
+  "image": "https://drkmortho.com/doctor-portrait.jpg",
+  "telephone": "+91-6281894631",
+  "email": "info@drkmortho.com",
+  "medicalSpecialty": [
+    "Orthopedic Surgery",
+    "Joint Replacement",
+    "Arthroscopy"
+  ],
+};
+
+const breadcrumbSchema = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Home",
+      "item": "https://drkmortho.com/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "About Doctor",
+      "item": "https://drkmortho.com/about"
+    }
+  ]
+};
+
+const aboutPageStructuredData = {
+  "@context": "https://schema.org",
+  "@graph": [
+    physicianSchema,
+    breadcrumbSchema,
+    {
+      "@type": "WebPage",
+      "name": "About Dr. Karthik Manchala",
+      "description":
+        "Learn about Dr. Karthik Manchala, an experienced orthopaedic surgeon in Hyderabad specializing in joint replacement and arthroscopy.",
+      "url": "https://drkmortho.com/about",
+      "mainEntity": physicianSchema
+    }
+  ]
+};
+---
+
+<Layout
+  title="About Dr. Karthik Manchala"
+  description="Dr. Karthik Manchala is an Orthopaedic, Joint Replacement & Arthroscopic Surgeon with 12+ years of experience. Expert in knee & hip replacement, fracture fixation, and sports injury treatment in Hyderabad."
+  keywords="Dr Karthik Manchala, orthopaedic surgeon hyderabad, joint replacement specialist, arthroscopic surgeon manikonda, bone doctor telangana, DNB orthopaedics"
+  canonicalUrl="/about"
+  structuredData={aboutPageStructuredData}
+>
+  <div class="min-h-screen bg-background">
+    <Header currentPath="/about" client:load />
+
+    {/* Hero Section */}
+    <section class="bg-gradient-to-b from-secondary/50 to-background section-padding">
+      <div class="section-container">
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+
+          {/* Image */}
+          <div class="order-2 lg:order-1">
+            <div class="relative">
+              <div class="absolute -inset-4 bg-primary/10 rounded-3xl transform rotate-3" />
+              <img
+                src="/doctor-portrait.png"
+                alt="Dr. Karthik Manchala - Orthopaedic, Joint Replacement & Arthroscopic Surgeon in Hyderabad"
+                class="relative rounded-2xl shadow-elevated w-full max-w-md mx-auto"
+                loading="lazy"
+              />
+              <div class="absolute -bottom-6 -right-6 bg-primary text-primary-foreground px-6 py-4 rounded-2xl shadow-lg">
+                <p class="text-3xl font-bold">12+</p>
+                <p class="text-sm">Years Experience</p>
+              </div>
+            </div>
+          </div>
+
+          {/* Content */}
+          <div class="order-1 lg:order-2">
+            <span class="text-primary font-semibold text-sm uppercase tracking-wider">
+              About Doctor
+            </span>
+            <h1 class="text-4xl md:text-5xl font-bold text-foreground mt-3 mb-6">
+              Dr. Karthik Manchala
+            </h1>
+            <p class="text-xl text-primary font-medium mb-4">
+              Orthopaedic, Joint Replacement & Arthroscopic Surgeon
+            </p>
+            <p class="text-muted-foreground leading-relaxed mb-6">
+              Dr. Karthik Manchala completed his Orthopaedic training at the
+              prestigious P.D. Hinduja Hospital, Mumbai. With over 12 years of
+              experience, he specializes in fracture fixation, joint
+              replacements, arthroscopy (key-hole surgeries), and comprehensive
+              orthopaedic care.
+            </p>
+            <p class="text-muted-foreground leading-relaxed mb-8">
+              He treats knee & hip arthritis, back pain, ligament injuries,
+              fractures, and sports injuries with precision and compassion. His
+              patient-first approach and use of advanced techniques ensure
+              optimal outcomes and faster recovery.
+            </p>
+
+            {/* Stats */}
+            <div class="grid grid-cols-3 gap-6">
+              <div class="text-center p-4 bg-card rounded-xl border border-border">
+                <Calendar class="w-6 h-6 text-primary mx-auto mb-2" />
+                <p class="text-2xl font-bold text-foreground">12+</p>
+                <p class="text-xs text-muted-foreground">Years</p>
+              </div>
+              <div class="text-center p-4 bg-card rounded-xl border border-border">
+                <Heart class="w-6 h-6 text-primary mx-auto mb-2" />
+                <p class="text-2xl font-bold text-foreground">10K+</p>
+                <p class="text-xs text-muted-foreground">Patients</p>
+              </div>
+              <div class="text-center p-4 bg-card rounded-xl border border-border">
+                <Award class="w-6 h-6 text-primary mx-auto mb-2" />
+                <p class="text-2xl font-bold text-foreground">4.9★</p>
+                <p class="text-xs text-muted-foreground">Rating</p>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    {/* Credentials & Expertise */}
+    <section class="section-padding">
+      <div class="section-container">
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-10">
+
+          {/* Credentials */}
+          <div class="medical-card p-8">
+            <div class="flex items-center gap-3 mb-6">
+              <div class="w-12 h-12 rounded-xl bg-secondary flex items-center justify-center">
+                <GraduationCap class="w-6 h-6 text-primary" />
+              </div>
+              <h2 class="text-2xl font-bold text-foreground">
+                Credentials
+              </h2>
+            </div>
+            <ul class="space-y-4">
+              {credentials.map((item, index) => (
+                <li key={index} class="flex items-start gap-3">
+                  <CheckCircle2 class="w-5 h-5 text-primary flex-shrink-0 mt-0.5" />
+                  <span class="text-muted-foreground">{item}</span>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          {/* Expertise */}
+          <div class="medical-card p-8">
+            <div class="flex items-center gap-3 mb-6">
+              <div class="w-12 h-12 rounded-xl bg-secondary flex items-center justify-center">
+                <Stethoscope class="w-6 h-6 text-primary" />
+              </div>
+              <h2 class="text-2xl font-bold text-foreground">
+                Areas of Expertise
+              </h2>
+            </div>
+            <ul class="space-y-4">
+              {expertise.map((item, index) => (
+                <li key={index} class="flex items-start gap-3">
+                  <CheckCircle2 class="w-5 h-5 text-accent flex-shrink-0 mt-0.5" />
+                  <span class="text-muted-foreground">{item}</span>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    {/* Booking Form */}
+    <BookingForm client:load />
+
+    <Footer client:load />
+    <FloatingButtons client:load />
+  </div>
+</Layout>
