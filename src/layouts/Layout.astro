@@ -23,7 +23,10 @@ const {
   structuredData
 } = Astro.props;
 
-const fullTitle = `${title} | Dr. Karthik Manchala - Orthopaedic Surgeon Hyderabad`;
+// Avoid title repetition - only append if the name is not already in the title
+const fullTitle = title.includes('Dr. Karthik Manchala') || title.includes('Karthik Manchala') 
+  ? title 
+  : `${title} | Dr. Karthik Manchala`;
 const url = `${BASE_URL}${canonicalUrl}`;
 ---
 
@@ -48,10 +51,10 @@ const url = `${BASE_URL}${canonicalUrl}`;
     <link rel="canonical" href={url} />
     
     {/* Language and Locale */}
-    <meta name="language" content="English" />
-    <link rel="alternate" hreflang="en-IN" href={url} />
-    <link rel="alternate" hreflang="en" href={url} />
-    <link rel="alternate" hreflang="x-default" href={url} />
+    <link rel="alternate" href={url} hreflang="x-default" />
+    <link rel="alternate" href={url} hreflang="en" />
+    <link rel="alternate" href={url} hreflang="en-IN" />
+    <link rel="alternate" href={url} hreflang="en-US" />
 
     {/* Open Graph / Facebook */}
     <meta property="og:type" content="website" />
@@ -120,14 +123,31 @@ const url = `${BASE_URL}${canonicalUrl}`;
     {/* Security & Privacy */}
     <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests" />
     <meta name="referrer" content="strict-origin-when-cross-origin" />
+    
+    {/* Performance - DNS Prefetch & Preconnect */}
     <link rel="dns-prefetch" href="https://fonts.googleapis.com" />
     <link rel="dns-prefetch" href="https://fonts.gstatic.com" />
-    <link rel="dns-prefetch" href="https://www.google-analytics.com" />
-
-    {/* Fonts */}
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
+
+    {/* Fonts - Optimized Loading */}
+    <link 
+      rel="preload" 
+      as="style" 
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" 
+    />
+    <link 
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" 
+      rel="stylesheet" 
+      media="print" 
+      onload="this.media='all'"
+    />
+    <noscript>
+      <link 
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" 
+        rel="stylesheet" 
+      />
+    </noscript>
 
     {/* Structured Data */}
     {structuredData && (

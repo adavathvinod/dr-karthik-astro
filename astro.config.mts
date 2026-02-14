@@ -72,9 +72,28 @@ export default defineConfig({
   site: 'https://drkmortho.com',
   output: 'static',
   
-  // Additional SEO configurations
+  // Performance & SEO optimizations
   compressHTML: true,
   build: {
     inlineStylesheets: 'auto',
+    assets: '_astro',
+  },
+  
+  // Vite optimizations for faster builds and page loads
+  vite: {
+    build: {
+      cssMinify: true,
+      minify: 'esbuild',
+      rollupOptions: {
+        output: {
+          manualChunks: {
+            'react-vendor': ['react', 'react-dom'],
+          },
+        },
+      },
+    },
+    ssr: {
+      noExternal: ['lucide-react'],
+    },
   },
 });
