@@ -1,0 +1,31 @@
+/* TEAM */
+Medical Director: Dr. Karthik Manchala
+Specialization: Orthopaedic, Joint Replacement & Arthroscopic Surgeon
+Location: Manikonda, Hyderabad, Telangana, India
+Contact: +91-6281894631
+
+/* SITE */
+Last update: 2026/02/14
+Standards: HTML5, CSS3, TypeScript, Accessibility (WCAG 2.1)
+Components: Astro, React, TailwindCSS, Radix UI
+Software: VS Code, Git, Node.js
+Language: English, Telugu, Hindi
+
+/* SERVICES */
+- Total Knee Replacement Surgery
+- Hip Replacement Surgery
+- Arthroscopy (Knee, Shoulder, Ankle)
+- Fracture Treatment & Management
+- Sports Injury Treatment
+- Joint Pain Management
+- Orthopaedic Consultation
+
+/* LOCATION */
+KM Ortho Clinic
+Manikonda, Hyderabad
+Telangana 500089, India
+Website: https://drkmortho.com
+
+/* THANKS */
+To all our patients for trusting us with their care.
+To the medical community for continuous learning and collaboration.

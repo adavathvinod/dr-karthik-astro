@@ -4,6 +4,7 @@ import { Header } from '@/components/Header';
 import { Footer } from '@/components/Footer';
 import { FloatingButtons } from '@/components/FloatingButtons';
 import { BookingForm } from '@/components/BookingForm';
+import { getAboutPageSchema } from '@/lib/structured-data';
 import {
   Award,
   GraduationCap,
@@ -12,6 +13,8 @@ import {
   Calendar,
   CheckCircle2
 } from 'lucide-react';
+
+const structuredData = getAboutPageSchema();
 
 const credentials = [
   "MBBS from Chalmeda Ananda Rao Institute of Medical Sciences, Karimnagar",
@@ -27,58 +30,6 @@ const expertise = [
   "Back Pain Management",
   "Sports Injury Treatment",
 ];
-
-const physicianSchema = {
-  "@context": "https://schema.org",
-  "@type": "Physician",
-  "name": "Dr. Karthik Manchala",
-  "jobTitle": "Orthopaedic, Joint Replacement & Arthroscopic Surgeon",
-  "description":
-    "Orthopaedic Surgeon with 12+ years of experience specializing in joint replacement, fracture fixation, and arthroscopy.",
-  "image": "https://drkmortho.com/doctor-portrait.jpg",
-  "telephone": "+91-6281894631",
-  "email": "info@drkmortho.com",
-  "medicalSpecialty": [
-    "Orthopedic Surgery",
-    "Joint Replacement",
-    "Arthroscopy"
-  ],
-};
-
-const breadcrumbSchema = {
-  "@context": "https://schema.org",
-  "@type": "BreadcrumbList",
-  "itemListElement": [
-    {
-      "@type": "ListItem",
-      "position": 1,
-      "name": "Home",
-      "item": "https://drkmortho.com/"
-    },
-    {
-      "@type": "ListItem",
-      "position": 2,
-      "name": "About Doctor",
-      "item": "https://drkmortho.com/about"
-    }
-  ]
-};
-
-const aboutPageStructuredData = {
-  "@context": "https://schema.org",
-  "@graph": [
-    physicianSchema,
-    breadcrumbSchema,
-    {
-      "@type": "WebPage",
-      "name": "About Dr. Karthik Manchala",
-      "description":
-        "Learn about Dr. Karthik Manchala, an experienced orthopaedic surgeon in Hyderabad specializing in joint replacement and arthroscopy.",
-      "url": "https://drkmortho.com/about",
-      "mainEntity": physicianSchema
-    }
-  ]
-};
 ---
 
 <Layout
@@ -86,7 +37,7 @@ const aboutPageStructuredData = {
   description="Learn about Dr. Karthik Manchala, an experienced orthopaedic doctor in Manikonda, Hyderabad specializing in knee replacement, hip replacement, arthroscopy and fracture treatment."
   keywords="Dr Karthik Manchala manikonda, orthopaedic doctor manikonda, joint replacement surgeon hyderabad"
   canonicalUrl="/about"
-  structuredData={aboutPageStructuredData}
+  structuredData={structuredData}
 >
 
   <div class="min-h-screen bg-background">

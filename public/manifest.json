@@ -1,0 +1,58 @@
+{
+  "name": "KM Ortho Clinic - Dr. Karthik Manchala",
+  "short_name": "KM Ortho",
+  "description": "Leading Orthopaedic, Joint Replacement & Arthroscopic Surgeon in Manikonda, Hyderabad",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#0EA5E9",
+  "orientation": "portrait-primary",
+  "icons": [
+    {
+      "src": "/android-chrome-192x192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "/android-chrome-512x512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "/apple-touch-icon.png",
+      "sizes": "180x180",
+      "type": "image/png"
+    }
+  ],
+  "categories": ["health", "medical", "healthcare"],
+  "lang": "en-IN",
+  "dir": "ltr",
+  "scope": "/",
+  "shortcuts": [
+    {
+      "name": "Book Appointment",
+      "short_name": "Book",
+      "description": "Book an appointment with Dr. Karthik",
+      "url": "/contact?action=book",
+      "icons": [{ "src": "/icon-book.png", "sizes": "96x96" }]
+    },
+    {
+      "name": "Services",
+      "short_name": "Services",
+      "description": "View our medical services",
+      "url": "/services",
+      "icons": [{ "src": "/icon-services.png", "sizes": "96x96" }]
+    },
+    {
+      "name": "Contact",
+      "short_name": "Contact",
+      "description": "Get in touch with us",
+      "url": "/contact",
+      "icons": [{ "src": "/icon-contact.png", "sizes": "96x96" }]
+    }
+  ],
+  "related_applications": [],
+  "prefer_related_applications": false
+}

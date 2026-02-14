@@ -4,105 +4,11 @@ import { Header } from '@/components/Header';
 import { Footer } from '@/components/Footer';
 import { FloatingButtons } from '@/components/FloatingButtons';
 import { BookingForm } from '@/components/BookingForm';
-import { ClinicTimings } from '@/components/ClinicTimings';
 import { Button } from '@/components/ui/button';
 import { Phone, MessageCircle, MapPin, Clock } from 'lucide-react';
+import { getContactPageSchema } from '@/lib/structured-data';
 
-const breadcrumbSchema = {
-  "@context": "https://schema.org",
-  "@type": "BreadcrumbList",
-  "itemListElement": [
-    {
-      "@type": "ListItem",
-      "position": 1,
-      "name": "Home",
-      "item": "https://drkmortho.com/"
-    },
-    {
-      "@type": "ListItem",
-      "position": 2,
-      "name": "Contact",
-      "item": "https://drkmortho.com/contact"
-    }
-  ]
-};
-
-const clinicSchema = {
-  "@context": "https://schema.org",
-  "@type": "MedicalClinic",
-  "name": "Dr. Karthik Manchala Ortho Clinic",
-  "alternateName": "KM Ortho Clinic",
-  "url": "https://drkmortho.com",
-  "logo": "https://drkmortho.com/logo.png",
-  "image": "https://drkmortho.com/clinic-reception.jpg",
-  "telephone": "+91-6281894631",
-  "priceRange": "$$",
-  "address": {
-    "@type": "PostalAddress",
-    "streetAddress": "Rd Number 25, Alkapur Township",
-    "addressLocality": "Manikonda, Hyderabad",
-    "addressRegion": "Telangana",
-    "postalCode": "500089",
-    "addressCountry": "IN"
-  },
-  "geo": {
-    "@type": "GeoCoordinates",
-    "latitude": 17.395,
-    "longitude": 78.375
-  },
-  "openingHoursSpecification": [
-    {
-      "@type": "OpeningHoursSpecification",
-      "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"],
-      "opens": "10:00",
-      "closes": "14:00"
-    },
-    {
-      "@type": "OpeningHoursSpecification",
-      "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"],
-      "opens": "17:00",
-      "closes": "21:00"
-    },
-    {
-      "@type": "OpeningHoursSpecification",
-      "dayOfWeek": "Sunday",
-      "opens": "11:00",
-      "closes": "14:00"
-    }
-  ],
-  "aggregateRating": {
-    "@type": "AggregateRating",
-    "ratingValue": "4.9",
-    "reviewCount": "150",
-    "bestRating": "5"
-  },
-  "medicalSpecialty": "Orthopedic",
-};
-
-const contactPageStructuredData = {
-  "@context": "https://schema.org",
-  "@graph": [
-    breadcrumbSchema,
-    clinicSchema,
-    {
-      "@type": "WebPage",
-      "name": "Contact Dr. Karthik Manchala Ortho Clinic",
-      "description": "Book an appointment or contact Dr. Karthik Manchala Ortho Clinic in Manikonda, Hyderabad. Phone, WhatsApp, address and clinic timings.",
-      "url": "https://drkmortho.com/contact"
-    },
-    {
-      "@type": "ContactPage",
-      "name": "Contact & Appointment",
-      "url": "https://drkmortho.com/contact",
-      "mainEntity": {
-        "@type": "MedicalClinic",
-        "name": "Dr. Karthik Manchala Ortho Clinic",
-        "telephone": "+91-6281894631",
-        "email": "info@drkmortho.com"
-      }
-    }
-  ]
-};
+const structuredData = getContactPageSchema();
 ---
 
 <Layout
@@ -110,7 +16,7 @@ const contactPageStructuredData = {
   description="Contact Dr. Karthik Manchala Ortho Clinic in Manikonda, Hyderabad 500089. Call +91 62818 94631 or WhatsApp to book appointment for knee replacement, fracture treatment and sports injury care."
   keywords="orthopaedic clinic manikonda, contact ortho doctor hyderabad, book appointment manikonda"
   canonicalUrl="/contact"
-  structuredData={contactPageStructuredData}
+  structuredData={structuredData}
 >
 
   <div class="min-h-screen bg-background">

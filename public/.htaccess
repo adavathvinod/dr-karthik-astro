@@ -1,12 +1,158 @@
-Options -MultiViews
+# Enterprise-level .htaccess for cPanel Apache hosting
+# Dr. Karthik Manchala - KM Ortho Clinic
+
+# =============================================
+# HTTPS Redirect (Force SSL)
+# =============================================
+<IfModule mod_rewrite.c>
+RewriteEngine On
+RewriteCond %{HTTPS} off
+RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+</IfModule>
+
+# =============================================
+# WWW to Non-WWW Redirect (or vice versa)
+# =============================================
+# Option 1: Redirect www to non-www (recommended)
+<IfModule mod_rewrite.c>
+RewriteEngine On
+RewriteCond %{HTTP_HOST} ^www\.(.*)$ [NC]
+RewriteRule ^(.*)$ https://%1/$1 [R=301,L]
+</IfModule>
+
+# Option 2: Redirect non-www to www (uncomment if preferred)
+# <IfModule mod_rewrite.c>
+# RewriteEngine On
+# RewriteCond %{HTTP_HOST} !^www\. [NC]
+# RewriteCond %{HTTP_HOST} !^localhost [NC]
+# RewriteRule ^(.*)$ https://www.%{HTTP_HOST}/$1 [R=301,L]
+# </IfModule>
+
+# =============================================
+# Clean URLs - Remove .html extension
+# =============================================
+<IfModule mod_rewrite.c>
 RewriteEngine On
 
-# Force HTTPS + correct domain
-RewriteCond %{HTTPS} off [OR]
-RewriteCond %{HTTP_HOST} !^drkarthikmanchala\.com$ [NC]
-RewriteRule ^ https://drkarthikmanchala.com%{REQUEST_URI} [L,R=301]
-
-# SPA routing
+# Remove .html extension from URLs
 RewriteCond %{REQUEST_FILENAME} !-f
 RewriteCond %{REQUEST_FILENAME} !-d
-RewriteRule ^ index.html [L]
+RewriteCond %{REQUEST_FILENAME}.html -f
+RewriteRule ^(.+)$ $1.html [L,QSA]
+
+# Redirect .html to clean URLs
+RewriteCond %{THE_REQUEST} ^[A-Z]{3,}\s([^.]+)\.html [NC]
+RewriteRule ^ %1 [R=301,L]
+
+# Handle 404 errors - redirect to custom 404 page
+ErrorDocument 404 /404.html
+</IfModule>
+
+# =============================================
+# Security Headers
+# =============================================
+<IfModule mod_headers.c>
+    # Prevent clickjacking
+    Header always set X-Frame-Options "SAMEORIGIN"
+    
+    # XSS Protection
+    Header always set X-XSS-Protection "1; mode=block"
+    
+    # Prevent MIME type sniffing
+    Header always set X-Content-Type-Options "nosniff"
+    
+    # Referrer Policy
+    Header always set Referrer-Policy "strict-origin-when-cross-origin"
+    
+    # Content Security Policy (adjust as needed)
+    Header always set Content-Security-Policy "default-src 'self'; script-src 'self' 'unsafe-inline' 'unsafe-eval' https://www.googletagmanager.com https://www.google-analytics.com https://wa.me; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: https:; connect-src 'self' https://www.google-analytics.com; frame-src https://www.google.com;"
+    
+    # Permissions Policy (formerly Feature Policy)
+    Header always set Permissions-Policy "geolocation=(self), microphone=(), camera=()"
+    
+    # Strict Transport Security (HSTS) - 1 year
+    Header always set Strict-Transport-Security "max-age=31536000; includeSubDomains; preload"
+</IfModule>
+
+# =============================================
+# Browser Caching & Compression
+# =============================================
+<IfModule mod_expires.c>
+    ExpiresActive On
+    
+    # Images
+    ExpiresByType image/jpeg "access plus 1 year"
+    ExpiresByType image/png "access plus 1 year"
+    ExpiresByType image/webp "access plus 1 year"
+    ExpiresByType image/svg+xml "access plus 1 year"
+    ExpiresByType image/x-icon "access plus 1 year"
+    
+    # CSS and JavaScript
+    ExpiresByType text/css "access plus 1 month"
+    ExpiresByType application/javascript "access plus 1 month"
+    ExpiresByType text/javascript "access plus 1 month"
+    
+    # Fonts
+    ExpiresByType font/woff "access plus 1 year"
+    ExpiresByType font/woff2 "access plus 1 year"
+    ExpiresByType application/font-woff "access plus 1 year"
+    ExpiresByType application/font-woff2 "access plus 1 year"
+    
+    # HTML
+    ExpiresByType text/html "access plus 0 seconds"
+    
+    # Default
+    ExpiresDefault "access plus 1 month"
+</IfModule>
+
+# Enable GZIP Compression
+<IfModule mod_deflate.c>
+    AddOutputFilterByType DEFLATE text/html
+    AddOutputFilterByType DEFLATE text/css
+    AddOutputFilterByType DEFLATE text/javascript
+    AddOutputFilterByType DEFLATE application/javascript
+    AddOutputFilterByType DEFLATE application/json
+    AddOutputFilterByType DEFLATE application/xml
+    AddOutputFilterByType DEFLATE text/xml
+    AddOutputFilterByType DEFLATE image/svg+xml
+</IfModule>
+
+# =============================================
+# File Access Security
+# =============================================
+# Protect sensitive files
+<FilesMatch "^\.">
+    Order allow,deny
+    Deny from all
+</FilesMatch>
+
+# Block access to specific file types
+<FilesMatch "\.(env|log|sql|bak|config|dist|fla|psd|ini|sh|inc|swp|md)$">
+    Order allow,deny
+    Deny from all
+</FilesMatch>
+
+# Allow access to humans.txt, robots.txt, security.txt
+<FilesMatch "^(humans|robots|security)\.txt$">
+    Order allow,deny
+    Allow from all
+</FilesMatch>
+
+# =============================================
+# Charset and MIME Types
+# =============================================
+AddDefaultCharset UTF-8
+AddCharset UTF-8 .html .css .js .xml .json .rss .atom
+
+# =============================================
+# Directory Browsing
+# =============================================
+Options -Indexes
+
+# =============================================
+# ETags (Optional - can improve caching)
+# =============================================
+<IfModule mod_headers.c>
+    Header unset ETag
+</IfModule>
+FileETag None

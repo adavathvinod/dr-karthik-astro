@@ -31,8 +31,11 @@ const url = `${BASE_URL}${canonicalUrl}`;
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="theme-color" content="#0073CC" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="theme-color" content="#0EA5E9" media="(prefers-color-scheme: light)" />
+    <meta name="theme-color" content="#0284C7" media="(prefers-color-scheme: dark)" />
+    <meta name="color-scheme" content="light dark" />
     
     {/* Primary Meta Tags */}
     <title>{fullTitle}</title>
@@ -40,7 +43,15 @@ const url = `${BASE_URL}${canonicalUrl}`;
     <meta name="description" content={description} />
     {keywords && <meta name="keywords" content={keywords} />}
     <meta name="author" content="Dr. Karthik Manchala" />
+    <meta name="creator" content="KM Ortho Clinic" />
+    <meta name="publisher" content="Dr. Karthik Manchala" />
     <link rel="canonical" href={url} />
+    
+    {/* Language and Locale */}
+    <meta name="language" content="English" />
+    <link rel="alternate" hreflang="en-IN" href={url} />
+    <link rel="alternate" hreflang="en" href={url} />
+    <link rel="alternate" hreflang="x-default" href={url} />
 
     {/* Open Graph / Facebook */}
     <meta property="og:type" content="website" />
@@ -48,8 +59,12 @@ const url = `${BASE_URL}${canonicalUrl}`;
     <meta property="og:title" content={fullTitle} />
     <meta property="og:description" content={description} />
     <meta property="og:image" content={ogImage} />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content={title} />
     <meta property="og:site_name" content="Dr. Karthik Manchala Ortho Clinic" />
     <meta property="og:locale" content="en_IN" />
+    <meta property="og:locale:alternate" content="en_US" />
 
     {/* Twitter */}
     <meta name="twitter:card" content="summary_large_image" />
@@ -57,17 +72,57 @@ const url = `${BASE_URL}${canonicalUrl}`;
     <meta name="twitter:title" content={fullTitle} />
     <meta name="twitter:description" content={description} />
     <meta name="twitter:image" content={ogImage} />
+    <meta name="twitter:image:alt" content={title} />
+    <meta name="twitter:creator" content="@drkmortho" />
+    <meta name="twitter:site" content="@drkmortho" />
 
-    {/* Additional SEO */}
-    <meta name="robots" content="index, follow" />
-    <meta name="googlebot" content="index, follow" />
+    {/* Additional Search Engine Tags */}
+    <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
+    <meta name="googlebot" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
+    <meta name="bingbot" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
+    <meta name="google" content="nositelinkssearchbox" />
+    <meta name="google" content="notranslate" />
+    
+    {/* Geographic Meta Tags */}
     <meta name="geo.region" content="IN-TG" />
-    <meta name="geo.placename" content="Hyderabad" />
+    <meta name="geo.placename" content="Hyderabad, Manikonda" />
     <meta name="geo.position" content="17.395;78.375" />
     <meta name="ICBM" content="17.395, 78.375" />
+    
+    {/* Business Information */}
+    <meta name="rating" content="General" />
+    <meta name="referrer" content="origin-when-cross-origin" />
+    <meta name="format-detection" content="telephone=yes" />
+    <meta name="format-detection" content="address=yes" />
+    
+    {/* Mobile App Capable */}
+    <meta name="mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+    <meta name="apple-mobile-web-app-title" content="KM Ortho" />
+    
+    {/* Microsoft Tags */}
+    <meta name="msapplication-TileColor" content="#0EA5E9" />
+    <meta name="msapplication-config" content="/browserconfig.xml" />
+    <meta name="msapplication-tap-highlight" content="no" />
 
-    {/* Favicon */}
+    {/* PWA Manifest */}
+    <link rel="manifest" href="/manifest.json" />
+    
+    {/* Favicons - Complete Set */}
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
     <link rel="icon" type="image/svg+xml" href="/favicon.png" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+    <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#0EA5E9" />
+    <link rel="shortcut icon" href="/favicon.ico" />
+    
+    {/* Security & Privacy */}
+    <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests" />
+    <meta name="referrer" content="strict-origin-when-cross-origin" />
+    <link rel="dns-prefetch" href="https://fonts.googleapis.com" />
+    <link rel="dns-prefetch" href="https://fonts.gstatic.com" />
+    <link rel="dns-prefetch" href="https://www.google-analytics.com" />
 
     {/* Fonts */}
     <link rel="preconnect" href="https://fonts.googleapis.com" />
