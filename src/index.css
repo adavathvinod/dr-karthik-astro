@@ -249,4 +249,26 @@
   .image-fade.loaded {
     opacity: 1;
   }
+
+  /* Animation Delays */
+  .animation-delay-100 {
+    animation-delay: 0.1s;
+  }
+
+  .animation-delay-200 {
+    animation-delay: 0.2s;
+  }
+
+  .animation-delay-300 {
+    animation-delay: 0.3s;
+  }
+
+  .animation-delay-400 {
+    animation-delay: 0.4s;
+  }
+
+  /* Utility classes */
+  .border-none {
+    border: 0 !important;
+  }
 }

@@ -61,18 +61,18 @@ export function HeroSlider() {
             </div>
 
             {/* Title */}
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight mb-4 animate-fade-in-up" style={{ animationDelay: "0.1s" }}>
+            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight mb-4 animate-fade-in-up animation-delay-100">
               Dr. Karthik Manchala
             </h1>
-            <p className="text-xl md:text-2xl font-medium text-primary mb-4 animate-fade-in-up" style={{ animationDelay: "0.2s" }}>
+            <p className="text-xl md:text-2xl font-medium text-primary mb-4 animate-fade-in-up animation-delay-200">
               Orthopaedic, Joint Replacement & Arthroscopic Surgeon
             </p>
-            <p className="text-lg md:text-xl text-white/90 mb-8 animate-fade-in-up" style={{ animationDelay: "0.3s" }}>
+            <p className="text-lg md:text-xl text-white/90 mb-8 animate-fade-in-up animation-delay-300">
               Trusted Orthopaedic Care with 12+ Years of Experience
             </p>
 
             {/* CTA Buttons */}
-            <div className="flex flex-wrap gap-4 animate-fade-in-up" style={{ animationDelay: "0.4s" }}>
+            <div className="flex flex-wrap gap-4 animate-fade-in-up animation-delay-400">
               <a href={WHATSAPP_LINK} target="_blank" rel="noopener noreferrer">
                 <Button size="lg" className="bg-primary hover:bg-primary/90 gap-2 text-base">
                   <Calendar className="w-5 h-5" />

@@ -10,7 +10,7 @@ export function Footer() {
           src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3807.4652070688667!2d78.36527617591044!3d17.389448302744295!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bcb951072577dc3%3A0x960fb115d604964a!2sDr.%20Karthik%20Manchala%20Ortho%20Clinic!5e0!3m2!1sen!2sin!4v1770570653779!5m2!1sen!2sin"
           width="100%"
           height="100%"
-          style={{ border: 0 }}
+          className="border-none"
           allowFullScreen
           loading="lazy"
           referrerPolicy="no-referrer-when-downgrade"
