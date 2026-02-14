@@ -451,6 +451,6 @@ Users can "Add to Home Screen" on mobile devices for app-like experience.
 ---
 
 **Document Maintained By:** SEO Team  
-**Contact:** contact@drkmortho.com  
+**Contact:** contact@https://drkarthikmanchala.com/  
 **Last Review:** February 14, 2026  
 **Next Review:** May 14, 2026

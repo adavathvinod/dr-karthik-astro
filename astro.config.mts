@@ -69,7 +69,7 @@ export default defineConfig({
       entryLimit: 45000,
     }),
   ],
-  site: 'https://drkmortho.com',
+  site: 'https://drkarthikmanchala.com/',
   output: 'static',
   
   // Performance & SEO optimizations

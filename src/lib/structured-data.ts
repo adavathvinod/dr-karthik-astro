@@ -1,7 +1,7 @@
 // Enterprise-level Structured Data (Schema.org) for Google Rich Results
 // This enables Knowledge Graph, Rich Snippets, and enhanced search appearance
 
-const BASE_URL = "https://drkmortho.com";
+const BASE_URL = "https://drkarthikmanchala.com/";
 
 export interface StructuredDataConfig {
   url?: string;
@@ -39,7 +39,7 @@ export const getOrganizationSchema = () => ({
   },
   description: "Premier orthopaedic clinic in Hyderabad with 12+ years of expertise in joint replacement, arthroscopy, and sports injury treatment. Led by Dr. Karthik Manchala, MS Orthopaedics.",
   telephone: "+91-628-189-4631",
-  email: "drkmortho@gmail.com",
+  email: "https://drkarthikmanchala.com/@gmail.com",
   address: {
     "@type": "PostalAddress",
     streetAddress: "Puppalguda, Manikonda",
@@ -119,18 +119,18 @@ export const getOrganizationSchema = () => ({
     }
   ],
   sameAs: [
-    "https://www.facebook.com/drkmortho",
-    "https://www.instagram.com/drkmortho",
+    "https://www.facebook.com/https://drkarthikmanchala.com/",
+    "https://www.instagram.com/https://drkarthikmanchala.com/",
     "https://www.linkedin.com/in/dr-karthik-manchala",
-    "https://twitter.com/drkmortho",
-    "https://www.youtube.com/@drkmortho"
+    "https://twitter.com/https://drkarthikmanchala.com/",
+    "https://www.youtube.com/@https://drkarthikmanchala.com/"
   ],
   contactPoint: [
     {
       "@type": "ContactPoint",
       telephone: "+91-628-189-4631",
       contactType: "customer service",
-      email: "drkmortho@gmail.com",
+      email: "https://drkarthikmanchala.com/@gmail.com",
       availableLanguage: ["English", "Hindi", "Telugu"],
       areaServed: "IN",
       contactOption: "TollFree"
@@ -169,7 +169,7 @@ export const getPersonSchema = () => ({
     caption: "Dr. Karthik Manchala"
   },
   url: BASE_URL,
-  email: "drkmortho@gmail.com",
+  email: "https://drkarthikmanchala.com/@gmail.com",
   telephone: "+91-628-189-4631",
   worksFor: {
     "@id": `${BASE_URL}/#organization`
@@ -208,7 +208,7 @@ export const getPersonSchema = () => ({
   award: "12+ Years of Excellence in Orthopaedic Care",
   sameAs: [
     "https://www.linkedin.com/in/dr-karthik-manchala",
-    "https://twitter.com/drkmortho"
+    "https://twitter.com/https://drkarthikmanchala.com/"
   ]
 });
 

@@ -168,10 +168,10 @@
 
 ## 📱 Contact & Emergency Info
 
-**Website:** https://drkmortho.com  
+**Website:** https://drkarthikmanchala.com/  
 **Phone:** +91-6281894631  
 **Location:** Manikonda, Hyderabad, Telangana 500089  
-**Email:** contact@drkmortho.com  
+**Email:** contact@https://drkarthikmanchala.com/  
 
 **Search Console:** [Link after setup]  
 **Analytics:** [Link after setup]  

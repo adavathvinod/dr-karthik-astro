@@ -58,7 +58,7 @@ This is THE most important step for local businesses!
    ✓ Category: Orthopedic Surgeon
    ✓ Address: Puppalguda, Manikonda, Hyderabad, TG 500089
    ✓ Phone: +91-628-189-4631
-   ✓ Website: https://drkmortho.com
+   ✓ Website: https://drkarthikmanchala.com/
    ✓ Hours: Mon-Fri 18:00-21:00, Sat 09:00-21:00
    ✓ Services: All orthopaedic services
    ✓ Photos: Clinic, doctor, procedures (min 10 photos)
@@ -149,7 +149,7 @@ Publish high-quality content:
 
 1. **Verify Your Website**
    - Go to: https://search.google.com/search-console
-   - Add property: drkmortho.com
+   - Add property: https://drkarthikmanchala.com/
    - Verify ownership (HTML file or DNS)
 
 2. **Submit Sitemap**
@@ -264,7 +264,7 @@ Get mentioned on reputable websites:
 
 **Test Your Schema:**
 ```
-https://search.google.com/test/rich-results?url=https://drkmortho.com
+https://search.google.com/test/rich-results?url=https://drkarthikmanchala.com/
 ```
 
 **Google Your Business:**

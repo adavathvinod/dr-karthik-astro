@@ -128,8 +128,8 @@ ErrorDocument 500 /500.html
 # ===============================================
 server {
     listen 80;
-    server_name drkmortho.com www.drkmortho.com;
-    return 301 https://drkmortho.com$request_uri;
+    server_name https://drkarthikmanchala.com/ www.https://drkarthikmanchala.com/;
+    return 301 https://drkarthikmanchala.com/$request_uri;
 }
 
 # ===============================================
@@ -137,15 +137,15 @@ server {
 # ===============================================
 server {
     listen 443 ssl http2;
-    server_name www.drkmortho.com;
-    return 301 https://drkmortho.com$request_uri;
+    server_name www.https://drkarthikmanchala.com/;
+    return 301 https://drkarthikmanchala.com/$request_uri;
 }
 
 server {
     listen 443 ssl http2;
-    server_name drkmortho.com;
+    server_name https://drkarthikmanchala.com/;
     
-    root /var/www/drkmortho/dist;
+    root /var/www/https://drkarthikmanchala.com//dist;
     index index.html;
     
     # SSL Configuration (use Let's Encrypt)
@@ -316,7 +316,7 @@ server {
     Cache-Control = "public, max-age=31536000, immutable"
 
 [[redirects]]
-  from = "https://www.drkmortho.com/*"
+  from = "https://www.https://drkarthikmanchala.com//*"
   to = "https://drkarthikmanchala.com/:splat"
   status = 301
   force = true
@@ -338,18 +338,18 @@ server {
 ## Cloudflare Page Rules
 
 ### Rule 1: Force HTTPS
-- URL: `http://*drkmortho.com/*`
+- URL: `http://*https://drkarthikmanchala.com//*`
 - Setting: Always Use HTTPS
 
 ### Rule 2: Cache Everything (Static Assets)
-- URL: `*drkmortho.com/*.{jpg,jpeg,png,webp,gif,svg,css,js,woff,woff2}`
+- URL: `*https://drkarthikmanchala.com//*.{jpg,jpeg,png,webp,gif,svg,css,js,woff,woff2}`
 - Settings:
   - Cache Level: Cache Everything
   - Edge Cache TTL: 1 month
   - Browser Cache TTL: 1 month
 
 ### Rule 3: Cache Sitemap
-- URL: `*drkmortho.com/*sitemap*.xml`
+- URL: `*https://drkarthikmanchala.com//*sitemap*.xml`
 - Settings:
   - Cache Level: Cache Everything
   - Edge Cache TTL: 1 day

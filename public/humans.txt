@@ -24,7 +24,7 @@ Language: English, Telugu, Hindi
 KM Ortho Clinic
 Manikonda, Hyderabad
 Telangana 500089, India
-Website: https://drkmortho.com
+Website: https://drkarthikmanchala.com/
 
 /* THANKS */
 To all our patients for trusting us with their care.

@@ -43,7 +43,7 @@ dist/
 □ Create/claim: "Dr. Karthik Manchala Ortho Clinic"
 □ Add address: Puppalguda, Manikonda, Hyderabad, 500089
 □ Add phone: +91-628-189-4631
-□ Add website: https://drkmortho.com
+□ Add website: https://drkarthikmanchala.com/
 □ Upload 5-10 clinic photos
 □ Add business hours
 □ Select category: "Orthopedic Surgeon"
@@ -59,7 +59,7 @@ dist/
 
 ```
 □ Go to: https://search.google.com/search-console
-□ Add property: drkmortho.com
+□ Add property: https://drkarthikmanchala.com/
 □ Verify ownership (upload HTML file or DNS)
 □ Submit sitemap: https://drkarthikmanchala.com/sitemap.xml
 □ Request indexing for all pages
@@ -74,7 +74,7 @@ dist/
 
 ```
 □ Go to: https://search.google.com/test/rich-results
-□ Enter: https://drkmortho.com
+□ Enter: https://drkarthikmanchala.com/
 □ Check for Organization schema ✓
 □ Check for LocalBusiness schema ✓
 □ Check for Person schema ✓
@@ -148,7 +148,7 @@ dist/
 - Name: Dr. Karthik Manchala Ortho Clinic
 - Address: Puppalguda, Manikonda, Hyderabad, TG 500089
 - Phone: +91-628-189-4631
-- Website: https://drkmortho.com
+- Website: https://drkarthikmanchala.com/
 
 ---
 
@@ -157,11 +157,11 @@ dist/
 ### Essential Profiles
 ```
 □ Facebook Business Page
-  URL: facebook.com/drkmortho
+  URL: facebook.com/https://drkarthikmanchala.com/
   Post weekly updates
   
 □ Instagram Professional
-  Handle: @drkmortho
+  Handle: @https://drkarthikmanchala.com/
   Share patient stories, health tips
   
 □ LinkedIn Company Page
@@ -271,7 +271,7 @@ dist/
 
 ### After Deploy
 ```
-□ Visit: https://drkmortho.com
+□ Visit: https://drkarthikmanchala.com/
 □ Check all pages load
 □ Test all links work
 □ Test mobile responsiveness
