@@ -73,12 +73,13 @@ const casesPageStructuredData = {
 ---
 
 <Layout
-  title="Before & After Cases - Treatment Results"
-  description="View successful orthopaedic treatment results by Dr. Karthik Manchala. Before and after cases of knee replacement, hip replacement, fracture fixation, ACL reconstruction, and spine surgery in Hyderabad."
-  keywords="knee replacement before after, hip surgery results, fracture treatment cases, ACL reconstruction recovery, orthopaedic surgery success, treatment outcomes hyderabad"
+  title="Orthopaedic Surgery Results in Manikonda | Before & After Cases"
+  description="View successful orthopaedic surgery results in Manikonda including knee replacement, hip replacement, fracture fixation and ACL reconstruction by Dr. Karthik Manchala."
+  keywords="knee replacement results manikonda, hip surgery results hyderabad, fracture treatment cases manikonda"
   canonicalUrl="/cases"
   structuredData={casesPageStructuredData}
 >
+
   <div class="min-h-screen bg-background">
     <Header currentPath="/cases" client:load />
 
@@ -98,7 +99,7 @@ const casesPageStructuredData = {
     </section>
 
     {/* Cases Grid */}
-    <section class="section-padding">
+    <section class="pt-0 pb-16">
       <div class="section-container">
         <div class="grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-10">
           {cases.map((caseItem) => (
@@ -148,6 +149,23 @@ const casesPageStructuredData = {
         </aside>
       </div>
     </section>
+
+<section class="mt-0 mb-10 text-center">
+  <div class="lg:max-w-4xl lg:mx-auto">
+    <p class="text-muted-foreground">
+      Explore our detailed services including
+      <a href="/knee-replacement-manikonda" class="text-primary hover:underline">knee replacement</a>,
+      <a href="/hip-replacement-manikonda" class="text-primary hover:underline">hip replacement</a>,
+      <a href="/arthroscopy-manikonda" class="text-primary hover:underline">arthroscopy</a>,
+      <a href="/fracture-treatment-manikonda" class="text-primary hover:underline">fracture treatment</a>
+      and
+      <a href="/sports-injury-treatment-manikonda" class="text-primary hover:underline">sports injury treatment</a>
+      in Manikonda.
+    </p>
+  </div>
+</section>
+
+
 
     {/* Booking Form */}
     <BookingForm client:load />

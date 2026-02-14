@@ -106,12 +106,13 @@ const contactPageStructuredData = {
 ---
 
 <Layout
-  title="Contact & Book Appointment"
-  description="Contact Dr. Karthik Manchala Ortho Clinic in Manikonda, Hyderabad. Call +91 62818 94631 or WhatsApp for appointments. Located at Rd Number 25, Alkapur Township. Mon-Sat: 10AM-2PM, 5PM-9PM. Sunday: 11AM-2PM."
-  keywords="orthopaedic clinic hyderabad, book appointment bone doctor, contact ortho clinic manikonda, dr karthik manchala phone, knee replacement consultation"
+  title="Orthopaedic Clinic in Manikonda | Contact Dr. Karthik Manchala"
+  description="Contact Dr. Karthik Manchala Ortho Clinic in Manikonda, Hyderabad 500089. Call +91 62818 94631 or WhatsApp to book appointment for knee replacement, fracture treatment and sports injury care."
+  keywords="orthopaedic clinic manikonda, contact ortho doctor hyderabad, book appointment manikonda"
   canonicalUrl="/contact"
   structuredData={contactPageStructuredData}
 >
+
   <div class="min-h-screen bg-background">
     <Header currentPath="/contact" client:load />
 
@@ -129,7 +130,7 @@ const contactPageStructuredData = {
     </section>
 
     {/* Contact Info & Map */}
-    <section class="section-padding">
+    <section class="pt-0 pb-16">
       <div class="section-container">
         <div class="grid grid-cols-1 lg:grid-cols-2 gap-10">
           {/* Contact Cards */}
@@ -243,8 +244,20 @@ const contactPageStructuredData = {
       </div>
     </section>
 
-    {/* Clinic Timings Banner */}
-    <ClinicTimings client:load />
+<section class="section-padding bg-primary text-white mb-16">
+  <div class="section-container max-w-4xl mx-auto text-center">
+    <h2 class="text-2xl md:text-3xl font-bold mb-4">
+      Visit Our Orthopaedic Clinic in Manikonda
+    </h2>
+    <p class="text-white/90 leading-relaxed">
+      Our clinic is located at Rd Number 25, Alkapur Township,
+      Manikonda, Hyderabad 500089. Book your consultation for
+      joint replacement, fracture care or sports injury treatment today.
+    </p>
+  </div>
+</section>
+
+
 
     {/* Booking Form */}
     <BookingForm client:load />

@@ -1,0 +1,187 @@
+---
+import Layout from '@/layouts/Layout.astro';
+import { Header } from '@/components/Header';
+import { Footer } from '@/components/Footer';
+import { FloatingButtons } from '@/components/FloatingButtons';
+import { BookingForm } from '@/components/BookingForm';
+import { CheckCircle2 } from 'lucide-react';
+
+const breadcrumbSchema = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Home",
+      "item": "https://drkmortho.com/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Arthroscopy Manikonda",
+      "item": "https://drkmortho.com/arthroscopy-manikonda"
+    }
+  ]
+};
+
+const medicalProcedureSchema = {
+  "@context": "https://schema.org",
+  "@type": "MedicalProcedure",
+  "name": "Arthroscopy Surgery",
+  "procedureType": "MinimallyInvasiveSurgicalProcedure",
+  "bodyLocation": "Knee and Shoulder Joints",
+  "performer": {
+    "@type": "Physician",
+    "name": "Dr. Karthik Manchala"
+  },
+  "availableAtOrFrom": {
+    "@type": "MedicalClinic",
+    "name": "Dr. Karthik Manchala Ortho Clinic",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "Rd Number 25, Alkapur Township",
+      "addressLocality": "Manikonda, Hyderabad",
+      "addressRegion": "Telangana",
+      "postalCode": "500089",
+      "addressCountry": "IN"
+    }
+  }
+};
+
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "What is arthroscopy surgery?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Arthroscopy is a minimally invasive keyhole surgery used to diagnose and treat joint problems using small incisions and a camera-guided instrument."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Who is the best arthroscopy surgeon in Manikonda?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Dr. Karthik Manchala is an experienced orthopaedic surgeon in Manikonda specializing in knee and shoulder arthroscopy with advanced techniques."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How long does recovery take after arthroscopy?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Recovery after arthroscopy is usually faster compared to open surgery. Most patients resume daily activities within a few weeks depending on the procedure."
+      }
+    }
+  ]
+};
+
+const pageStructuredData = {
+  "@context": "https://schema.org",
+  "@graph": [
+    breadcrumbSchema,
+    medicalProcedureSchema,
+    faqSchema,
+    {
+      "@type": "WebPage",
+      "name": "Best Arthroscopy Surgeon in Manikonda",
+      "url": "https://drkmortho.com/arthroscopy-manikonda"
+    }
+  ]
+};
+---
+
+<Layout
+  title="Best Arthroscopy Surgeon in Manikonda"
+  description="Looking for arthroscopy in Manikonda? Dr. Karthik Manchala offers advanced knee and shoulder arthroscopy (keyhole surgery) in Alkapur Township, Hyderabad 500089."
+  keywords="arthroscopy in manikonda, knee arthroscopy hyderabad, shoulder arthroscopy manikonda, keyhole surgery orthopaedic, arthroscopy surgeon hyderabad"
+  canonicalUrl="/arthroscopy-manikonda"
+  structuredData={pageStructuredData}
+>
+  <div class="min-h-screen bg-background">
+    <Header currentPath="/arthroscopy-manikonda" client:load />
+
+    {/* Hero Section */}
+    <section class="bg-gradient-to-b from-secondary/50 to-background section-padding">
+      <div class="section-container text-center">
+        <h1 class="text-4xl md:text-5xl font-bold text-foreground mb-4">
+          Arthroscopy in Manikonda
+        </h1>
+        <p class="text-lg text-muted-foreground max-w-3xl mx-auto">
+          Dr. Karthik Manchala provides advanced arthroscopy surgery in Manikonda,
+          Alkapur Township, Hyderabad 500089. Arthroscopy is a minimally invasive
+          keyhole procedure used to diagnose and treat joint conditions with faster recovery.
+        </p>
+      </div>
+    </section>
+
+    {/* Content Section */}
+    <section class="section-padding">
+      <div class="section-container max-w-4xl mx-auto space-y-8">
+
+        <h2 class="text-2xl font-bold text-foreground">
+          Advanced Knee & Shoulder Arthroscopy in Manikonda
+        </h2>
+        <p class="text-muted-foreground leading-relaxed">
+          Arthroscopy is commonly used for treating ligament injuries, cartilage
+          damage, meniscus tears, and shoulder problems. At Dr. Karthik Manchala
+          Ortho Clinic located at Rd Number 25, Alkapur Township, Manikonda,
+          patients receive expert arthroscopic care using modern techniques.
+        </p>
+
+        <h2 class="text-2xl font-bold text-foreground">
+          Conditions Treated with Arthroscopy
+        </h2>
+        <ul class="space-y-3 text-muted-foreground">
+          <li class="flex gap-2">
+            <CheckCircle2 class="w-5 h-5 text-primary" />
+            ACL and ligament injuries
+          </li>
+          <li class="flex gap-2">
+            <CheckCircle2 class="w-5 h-5 text-primary" />
+            Meniscus tears
+          </li>
+          <li class="flex gap-2">
+            <CheckCircle2 class="w-5 h-5 text-primary" />
+            Rotator cuff injuries
+          </li>
+          <li class="flex gap-2">
+            <CheckCircle2 class="w-5 h-5 text-primary" />
+            Joint stiffness and cartilage damage
+          </li>
+        </ul>
+
+        <h2 class="text-2xl font-bold text-foreground">
+          Benefits of Arthroscopy Surgery
+        </h2>
+        <p class="text-muted-foreground leading-relaxed">
+          Arthroscopy involves smaller incisions compared to traditional open surgery.
+          This leads to less pain, reduced hospital stay, faster recovery, and
+          minimal scarring. Patients from Manikonda and nearby Hyderabad areas
+          prefer arthroscopy for quicker return to daily activities.
+        </p>
+
+        <h2 class="text-2xl font-bold text-foreground">
+          Why Choose Dr. Karthik Manchala for Arthroscopy?
+        </h2>
+        <p class="text-muted-foreground leading-relaxed">
+          With over 12 years of orthopaedic experience, Dr. Karthik Manchala
+          specializes in knee and shoulder arthroscopy. His patient-focused
+          approach ensures accurate diagnosis, precise surgical intervention,
+          and structured rehabilitation plans for optimal outcomes.
+        </p>
+
+      </div>
+    </section>
+
+    {/* Booking */}
+    <BookingForm client:load />
+
+    <Footer client:load />
+    <FloatingButtons client:load />
+  </div>
+</Layout>

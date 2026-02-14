@@ -27,7 +27,7 @@ Preferred Time: ${formData.preferredTime}`;
   };
 
   return (
-    <section className="section-padding bg-secondary/30">
+    <section className="pt-0 pb-16 bg-muted/30">
       <div className="section-container">
         <div className="max-w-2xl mx-auto">
           {/* Section Header */}

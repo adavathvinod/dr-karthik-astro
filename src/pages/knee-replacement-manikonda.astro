@@ -1,0 +1,183 @@
+---
+import Layout from '@/layouts/Layout.astro';
+import { Header } from '@/components/Header';
+import { Footer } from '@/components/Footer';
+import { FloatingButtons } from '@/components/FloatingButtons';
+import { BookingForm } from '@/components/BookingForm';
+import { CheckCircle2 } from 'lucide-react';
+
+const breadcrumbSchema = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Home",
+      "item": "https://drkmortho.com/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Knee Replacement Manikonda",
+      "item": "https://drkmortho.com/knee-replacement-manikonda"
+    }
+  ]
+};
+
+const medicalProcedureSchema = {
+  "@context": "https://schema.org",
+  "@type": "MedicalProcedure",
+  "name": "Knee Replacement Surgery",
+  "procedureType": "SurgicalProcedure",
+  "bodyLocation": "Knee Joint",
+  "performer": {
+    "@type": "Physician",
+    "name": "Dr. Karthik Manchala"
+  },
+  "availableAtOrFrom": {
+    "@type": "MedicalClinic",
+    "name": "Dr. Karthik Manchala Ortho Clinic",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "Rd Number 25, Alkapur Township",
+      "addressLocality": "Manikonda, Hyderabad",
+      "addressRegion": "Telangana",
+      "postalCode": "500089",
+      "addressCountry": "IN"
+    }
+  }
+};
+
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Who is the best knee replacement surgeon in Manikonda?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Dr. Karthik Manchala is an experienced orthopaedic surgeon in Manikonda specializing in total knee replacement surgery with over 12 years of experience."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What is the cost of knee replacement in Hyderabad?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Knee replacement cost in Hyderabad depends on implant type, hospital stay, and patient condition. Consultation is required for accurate cost estimation."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How long does recovery take after knee replacement?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Most patients start walking within a few days and recover significantly within 4–6 weeks, with full recovery taking a few months."
+      }
+    }
+  ]
+};
+
+const pageStructuredData = {
+  "@context": "https://schema.org",
+  "@graph": [
+    breadcrumbSchema,
+    medicalProcedureSchema,
+    faqSchema,
+    {
+      "@type": "WebPage",
+      "name": "Best Knee Replacement Surgeon in Manikonda",
+      "url": "https://drkmortho.com/knee-replacement-manikonda"
+    }
+  ]
+};
+---
+
+<Layout
+  title="Best Knee Replacement Surgeon in Manikonda"
+  description="Looking for knee replacement in Manikonda? Dr. Karthik Manchala is an experienced orthopaedic surgeon in Alkapur Township, Hyderabad 500089 specializing in total knee replacement surgery."
+  keywords="knee replacement in manikonda, best knee replacement surgeon in manikonda, knee pain doctor manikonda, total knee replacement hyderabad, knee replacement cost hyderabad"
+  canonicalUrl="/knee-replacement-manikonda"
+  structuredData={pageStructuredData}
+>
+  <div class="min-h-screen bg-background">
+    <Header currentPath="/knee-replacement-manikonda" client:load />
+
+    {/* Hero Section */}
+    <section class="bg-gradient-to-b from-secondary/50 to-background section-padding">
+      <div class="section-container text-center">
+        <h1 class="text-4xl md:text-5xl font-bold text-foreground mb-4">
+          Knee Replacement in Manikonda
+        </h1>
+        <p class="text-lg text-muted-foreground max-w-3xl mx-auto">
+          Dr. Karthik Manchala offers advanced knee replacement surgery in Manikonda,
+          Alkapur Township, Hyderabad 500089. With over 12 years of experience,
+          he specializes in total knee replacement for arthritis and severe knee pain.
+        </p>
+      </div>
+    </section>
+
+    {/* Content Section */}
+    <section class="section-padding">
+      <div class="section-container max-w-4xl mx-auto space-y-8">
+
+        <h2 class="text-2xl font-bold text-foreground">
+          Best Knee Replacement Surgeon in Manikonda
+        </h2>
+        <p class="text-muted-foreground leading-relaxed">
+          If you are suffering from chronic knee pain, stiffness, or advanced arthritis,
+          knee replacement surgery may be the most effective solution. At Dr. Karthik
+          Manchala Ortho Clinic located at Rd Number 25, Alkapur Township, Manikonda,
+          patients receive personalized care and advanced joint replacement treatment.
+        </p>
+
+        <h2 class="text-2xl font-bold text-foreground">
+          When Do You Need Knee Replacement?
+        </h2>
+        <ul class="space-y-3 text-muted-foreground">
+          <li class="flex gap-2">
+            <CheckCircle2 class="w-5 h-5 text-primary" />
+            Severe knee arthritis not improving with medications
+          </li>
+          <li class="flex gap-2">
+            <CheckCircle2 class="w-5 h-5 text-primary" />
+            Difficulty walking or climbing stairs
+          </li>
+          <li class="flex gap-2">
+            <CheckCircle2 class="w-5 h-5 text-primary" />
+            Knee deformity or instability
+          </li>
+        </ul>
+
+        <h2 class="text-2xl font-bold text-foreground">
+          Advanced Knee Replacement Surgery in Hyderabad
+        </h2>
+        <p class="text-muted-foreground leading-relaxed">
+          Using modern surgical techniques and high-quality implants, Dr. Karthik
+          Manchala performs total knee replacement and partial knee replacement
+          procedures. The goal is to relieve pain, restore mobility, and improve
+          quality of life.
+        </p>
+
+        <h2 class="text-2xl font-bold text-foreground">
+          Why Choose Dr. Karthik Manchala?
+        </h2>
+        <p class="text-muted-foreground leading-relaxed">
+          With 12+ years of orthopaedic experience, extensive joint replacement
+          training, and a patient-first approach, Dr. Karthik Manchala is a trusted
+          knee replacement surgeon in Manikonda serving patients from Alkapur Township,
+          Puppalaguda, Narsingi, and surrounding Hyderabad areas.
+        </p>
+
+      </div>
+    </section>
+
+    {/* Booking */}
+    <BookingForm client:load />
+
+    <Footer client:load />
+    <FloatingButtons client:load />
+  </div>
+</Layout>

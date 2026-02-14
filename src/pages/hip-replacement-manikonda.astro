@@ -1,0 +1,184 @@
+---
+import Layout from '@/layouts/Layout.astro';
+import { Header } from '@/components/Header';
+import { Footer } from '@/components/Footer';
+import { FloatingButtons } from '@/components/FloatingButtons';
+import { BookingForm } from '@/components/BookingForm';
+import { CheckCircle2 } from 'lucide-react';
+
+const breadcrumbSchema = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Home",
+      "item": "https://drkmortho.com/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Hip Replacement Manikonda",
+      "item": "https://drkmortho.com/hip-replacement-manikonda"
+    }
+  ]
+};
+
+const medicalProcedureSchema = {
+  "@context": "https://schema.org",
+  "@type": "MedicalProcedure",
+  "name": "Hip Replacement Surgery",
+  "procedureType": "SurgicalProcedure",
+  "bodyLocation": "Hip Joint",
+  "performer": {
+    "@type": "Physician",
+    "name": "Dr. Karthik Manchala"
+  },
+  "availableAtOrFrom": {
+    "@type": "MedicalClinic",
+    "name": "Dr. Karthik Manchala Ortho Clinic",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "Rd Number 25, Alkapur Township",
+      "addressLocality": "Manikonda, Hyderabad",
+      "addressRegion": "Telangana",
+      "postalCode": "500089",
+      "addressCountry": "IN"
+    }
+  }
+};
+
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Who is the best hip replacement surgeon in Manikonda?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Dr. Karthik Manchala is an experienced orthopaedic surgeon in Manikonda specializing in hip replacement surgery with advanced techniques and personalized care."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What is the cost of hip replacement in Hyderabad?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Hip replacement cost in Hyderabad varies depending on implant type, hospital stay, and patient condition. A detailed consultation is required for accurate estimation."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How long does recovery take after hip replacement surgery?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Most patients begin walking within a few days and recover significantly within 4–6 weeks. Full recovery may take a few months depending on overall health."
+      }
+    }
+  ]
+};
+
+const pageStructuredData = {
+  "@context": "https://schema.org",
+  "@graph": [
+    breadcrumbSchema,
+    medicalProcedureSchema,
+    faqSchema,
+    {
+      "@type": "WebPage",
+      "name": "Best Hip Replacement Surgeon in Manikonda",
+      "url": "https://drkmortho.com/hip-replacement-manikonda"
+    }
+  ]
+};
+---
+
+<Layout
+  title="Best Hip Replacement Surgeon in Manikonda"
+  description="Looking for hip replacement in Manikonda? Dr. Karthik Manchala is a trusted orthopaedic surgeon in Alkapur Township, Hyderabad 500089 specializing in advanced hip replacement surgery."
+  keywords="hip replacement in manikonda, best hip replacement surgeon in manikonda, hip pain specialist manikonda, hip replacement cost hyderabad, total hip replacement hyderabad"
+  canonicalUrl="/hip-replacement-manikonda"
+  structuredData={pageStructuredData}
+>
+  <div class="min-h-screen bg-background">
+    <Header currentPath="/hip-replacement-manikonda" client:load />
+
+    {/* Hero Section */}
+    <section class="bg-gradient-to-b from-secondary/50 to-background section-padding">
+      <div class="section-container text-center">
+        <h1 class="text-4xl md:text-5xl font-bold text-foreground mb-4">
+          Hip Replacement in Manikonda
+        </h1>
+        <p class="text-lg text-muted-foreground max-w-3xl mx-auto">
+          Dr. Karthik Manchala provides advanced hip replacement surgery in Manikonda,
+          Alkapur Township, Hyderabad 500089. With 12+ years of orthopaedic experience,
+          he specializes in total hip replacement for arthritis and severe hip pain.
+        </p>
+      </div>
+    </section>
+
+    {/* Content Section */}
+    <section class="section-padding">
+      <div class="section-container max-w-4xl mx-auto space-y-8">
+
+        <h2 class="text-2xl font-bold text-foreground">
+          Trusted Hip Replacement Surgeon in Manikonda
+        </h2>
+        <p class="text-muted-foreground leading-relaxed">
+          Chronic hip pain can severely limit mobility and quality of life. At
+          Dr. Karthik Manchala Ortho Clinic located at Rd Number 25, Alkapur Township,
+          Manikonda, patients receive comprehensive evaluation and modern hip
+          replacement treatment tailored to their needs.
+        </p>
+
+        <h2 class="text-2xl font-bold text-foreground">
+          When Is Hip Replacement Recommended?
+        </h2>
+        <ul class="space-y-3 text-muted-foreground">
+          <li class="flex gap-2">
+            <CheckCircle2 class="w-5 h-5 text-primary" />
+            Severe hip arthritis not responding to medication
+          </li>
+          <li class="flex gap-2">
+            <CheckCircle2 class="w-5 h-5 text-primary" />
+            Persistent hip pain affecting daily activities
+          </li>
+          <li class="flex gap-2">
+            <CheckCircle2 class="w-5 h-5 text-primary" />
+            Hip joint damage due to injury or degeneration
+          </li>
+        </ul>
+
+        <h2 class="text-2xl font-bold text-foreground">
+          Advanced Total Hip Replacement in Hyderabad
+        </h2>
+        <p class="text-muted-foreground leading-relaxed">
+          Using modern surgical techniques and high-quality implants, Dr. Karthik
+          Manchala performs total hip replacement to relieve pain and restore
+          movement. The goal is faster recovery, reduced discomfort, and long-term
+          joint function.
+        </p>
+
+        <h2 class="text-2xl font-bold text-foreground">
+          Why Choose Dr. Karthik Manchala for Hip Replacement?
+        </h2>
+        <p class="text-muted-foreground leading-relaxed">
+          As a leading orthopaedic surgeon in Manikonda, Dr. Karthik Manchala
+          offers patient-focused care, thorough diagnosis, and post-operative
+          rehabilitation guidance. Patients from Alkapur Township, Puppalaguda,
+          Narsingi, and nearby Hyderabad areas trust his expertise in hip
+          replacement surgery.
+        </p>
+
+      </div>
+    </section>
+
+    {/* Booking Form */}
+    <BookingForm client:load />
+
+    <Footer client:load />
+    <FloatingButtons client:load />
+  </div>
+</Layout>

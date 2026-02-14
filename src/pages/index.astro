@@ -90,12 +90,13 @@ const homePageStructuredData = {
 ---
 
 <Layout
-  title="Best Orthopaedic Doctor in Hyderabad"
-  description="Dr. Karthik Manchala - Trusted orthopaedic surgeon in Manikonda, Hyderabad with 12+ years experience. Expert in joint replacement, fracture fixation, arthroscopy & sports injuries. 4.9★ Google rated. Book appointment now!"
-  keywords="orthopaedic doctor hyderabad, bone specialist manikonda, joint replacement surgery hyderabad, knee pain treatment, hip replacement surgeon, fracture treatment telangana, arthroscopy hyderabad, sports injury doctor"
+  title="Best Orthopaedic Doctor in Manikonda, Hyderabad | Dr. Karthik Manchala"
+  description="Dr. Karthik Manchala is a trusted orthopaedic doctor in Manikonda, Hyderabad 500089 with 12+ years experience. Specialist in knee replacement, hip replacement, arthroscopy, fracture treatment & sports injury care. 4.9★ rated clinic in Alkapur Township."
+  keywords="orthopaedic doctor manikonda, bone specialist manikonda, knee replacement manikonda, hip replacement hyderabad, fracture treatment manikonda, sports injury doctor manikonda"
   canonicalUrl="/"
   structuredData={homePageStructuredData}
 >
+
   <div class="min-h-screen bg-background">
     <Header currentPath="/" client:load />
     
@@ -113,7 +114,7 @@ const homePageStructuredData = {
               </div>
               <p class="text-2xl md:text-3xl font-bold text-foreground">{stat.value}</p>
               <p class="text-sm text-muted-foreground">{stat.label}</p>
-            </div>
+            </div> 
           ))}
         </div>
       </div>
@@ -123,13 +124,48 @@ const homePageStructuredData = {
     <ServicesSection client:load />
 
     {/* View All Services Button */}
-    <div class="text-center pb-12 bg-background">
+    <div class="text-center pb-2 bg-background">
       <a href="/services">
         <Button variant="outline" size="lg">
           View All Services
         </Button>
       </a>
     </div>
+
+<section class="section-padding bg-background">
+  <div class="section-container max-w-4xl mx-auto text-center">
+    <h2 class="text-3xl font-bold text-foreground mb-6">
+      Orthopaedic Doctor in Manikonda, Hyderabad
+    </h2>
+
+    <p class="text-muted-foreground leading-relaxed mb-4">
+      Located at Rd Number 25, Alkapur Township, Manikonda, Hyderabad 500089,
+      Dr. Karthik Manchala Ortho Clinic provides advanced treatment for
+      knee pain, hip arthritis, fractures, ligament injuries and sports injuries.
+    </p>
+
+    <p class="text-muted-foreground leading-relaxed">
+      We specialize in 
+      <a href="/knee-replacement-manikonda" class="text-primary hover:underline font-medium">
+        knee replacement
+      </a>, 
+      <a href="/hip-replacement-manikonda" class="text-primary hover:underline font-medium">
+        hip replacement
+      </a>, 
+      <a href="/arthroscopy-manikonda" class="text-primary hover:underline font-medium">
+        arthroscopy
+      </a>, 
+      <a href="/fracture-treatment-manikonda" class="text-primary hover:underline font-medium">
+        fracture treatment
+      </a> 
+      and 
+      <a href="/sports-injury-treatment-manikonda" class="text-primary hover:underline font-medium">
+        sports injury care
+      </a> 
+      in Manikonda and nearby Hyderabad areas.
+    </p>
+  </div>
+</section>
 
     {/* Clinic Timings */}
     <ClinicTimings client:load />

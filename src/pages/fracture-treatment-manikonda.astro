@@ -1,0 +1,187 @@
+---
+import Layout from '@/layouts/Layout.astro';
+import { Header } from '@/components/Header';
+import { Footer } from '@/components/Footer';
+import { FloatingButtons } from '@/components/FloatingButtons';
+import { BookingForm } from '@/components/BookingForm';
+import { CheckCircle2 } from 'lucide-react';
+
+const breadcrumbSchema = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Home",
+      "item": "https://drkmortho.com/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Fracture Treatment Manikonda",
+      "item": "https://drkmortho.com/fracture-treatment-manikonda"
+    }
+  ]
+};
+
+const medicalProcedureSchema = {
+  "@context": "https://schema.org",
+  "@type": "MedicalProcedure",
+  "name": "Fracture Treatment",
+  "procedureType": "OrthopedicProcedure",
+  "bodyLocation": "Bones and Joints",
+  "performer": {
+    "@type": "Physician",
+    "name": "Dr. Karthik Manchala"
+  },
+  "availableAtOrFrom": {
+    "@type": "MedicalClinic",
+    "name": "Dr. Karthik Manchala Ortho Clinic",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "Rd Number 25, Alkapur Township",
+      "addressLocality": "Manikonda, Hyderabad",
+      "addressRegion": "Telangana",
+      "postalCode": "500089",
+      "addressCountry": "IN"
+    }
+  }
+};
+
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Who is the best fracture doctor in Manikonda?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Dr. Karthik Manchala is an experienced orthopaedic surgeon in Manikonda specializing in fracture treatment and trauma care with advanced surgical techniques."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Do all fractures require surgery?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Not all fractures require surgery. Some can be treated with casting or splinting, while complex fractures may need surgical fixation depending on severity."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How long does fracture healing take?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Fracture healing typically takes 6–12 weeks depending on the type of fracture, age of the patient, and overall health condition."
+      }
+    }
+  ]
+};
+
+const pageStructuredData = {
+  "@context": "https://schema.org",
+  "@graph": [
+    breadcrumbSchema,
+    medicalProcedureSchema,
+    faqSchema,
+    {
+      "@type": "WebPage",
+      "name": "Best Fracture Treatment in Manikonda",
+      "url": "https://drkmortho.com/fracture-treatment-manikonda"
+    }
+  ]
+};
+---
+
+<Layout
+  title="Best Fracture Treatment in Manikonda"
+  description="Looking for fracture treatment in Manikonda? Dr. Karthik Manchala offers expert bone fracture care and orthopaedic trauma treatment in Alkapur Township, Hyderabad 500089."
+  keywords="fracture treatment in manikonda, bone fracture doctor manikonda, orthopaedic trauma hyderabad, emergency fracture care manikonda, best ortho doctor for fracture"
+  canonicalUrl="/fracture-treatment-manikonda"
+  structuredData={pageStructuredData}
+>
+  <div class="min-h-screen bg-background">
+    <Header currentPath="/fracture-treatment-manikonda" client:load />
+
+    {/* Hero Section */}
+    <section class="bg-gradient-to-b from-secondary/50 to-background section-padding">
+      <div class="section-container text-center">
+        <h1 class="text-4xl md:text-5xl font-bold text-foreground mb-4">
+          Fracture Treatment in Manikonda
+        </h1>
+        <p class="text-lg text-muted-foreground max-w-3xl mx-auto">
+          Dr. Karthik Manchala provides expert fracture treatment in Manikonda,
+          Alkapur Township, Hyderabad 500089. From simple fractures to complex
+          trauma cases, he offers comprehensive orthopaedic care with modern techniques.
+        </p>
+      </div>
+    </section>
+
+    {/* Content Section */}
+    <section class="section-padding">
+      <div class="section-container max-w-4xl mx-auto space-y-8">
+
+        <h2 class="text-2xl font-bold text-foreground">
+          Trusted Bone Fracture Doctor in Manikonda
+        </h2>
+        <p class="text-muted-foreground leading-relaxed">
+          Fractures can occur due to accidents, sports injuries, or falls. At
+          Dr. Karthik Manchala Ortho Clinic located at Rd Number 25, Alkapur Township,
+          Manikonda, patients receive timely evaluation and effective fracture
+          treatment to ensure proper bone healing and function restoration.
+        </p>
+
+        <h2 class="text-2xl font-bold text-foreground">
+          Types of Fractures Treated
+        </h2>
+        <ul class="space-y-3 text-muted-foreground">
+          <li class="flex gap-2">
+            <CheckCircle2 class="w-5 h-5 text-primary" />
+            Wrist and hand fractures
+          </li>
+          <li class="flex gap-2">
+            <CheckCircle2 class="w-5 h-5 text-primary" />
+            Ankle and foot fractures
+          </li>
+          <li class="flex gap-2">
+            <CheckCircle2 class="w-5 h-5 text-primary" />
+            Hip and femur fractures
+          </li>
+          <li class="flex gap-2">
+            <CheckCircle2 class="w-5 h-5 text-primary" />
+            Pediatric and sports-related fractures
+          </li>
+        </ul>
+
+        <h2 class="text-2xl font-bold text-foreground">
+          Advanced Orthopaedic Trauma Care in Hyderabad
+        </h2>
+        <p class="text-muted-foreground leading-relaxed">
+          Depending on the severity of the fracture, treatment may involve
+          casting, splinting, or surgical fixation using plates, screws, or rods.
+          Dr. Karthik Manchala ensures precise diagnosis and structured follow-up
+          care for optimal recovery.
+        </p>
+
+        <h2 class="text-2xl font-bold text-foreground">
+          Why Choose Dr. Karthik Manchala for Fracture Treatment?
+        </h2>
+        <p class="text-muted-foreground leading-relaxed">
+          With over 12 years of orthopaedic experience, Dr. Karthik Manchala
+          is known for his expertise in fracture management and trauma care.
+          Patients from Manikonda, Alkapur Township, Puppalaguda, Narsingi,
+          and nearby Hyderabad areas trust his compassionate and precise approach.
+        </p>
+
+      </div>
+    </section>
+
+    {/* Booking */}
+    <BookingForm client:load />
+
+    <Footer client:load />
+    <FloatingButtons client:load />
+  </div>
+</Layout>
