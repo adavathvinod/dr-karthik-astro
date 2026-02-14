@@ -15,16 +15,16 @@ export default defineConfig({
       
       // Custom priority and changefreq per page
       customPages: [
-        'https://drkmortho.com/',
-        'https://drkmortho.com/about',
-        'https://drkmortho.com/services',
-        'https://drkmortho.com/contact',
-        'https://drkmortho.com/knee-replacement-manikonda',
-        'https://drkmortho.com/hip-replacement-manikonda',
-        'https://drkmortho.com/arthroscopy-manikonda',
-        'https://drkmortho.com/fracture-treatment-manikonda',
-        'https://drkmortho.com/sports-injury-treatment-manikonda',
-        'https://drkmortho.com/cases',
+        'https://drkarthikmanchala.com/',
+        'https://drkarthikmanchala.com/about',
+        'https://drkarthikmanchala.com/services',
+        'https://drkarthikmanchala.com/contact',
+        'https://drkarthikmanchala.com/knee-replacement-manikonda',
+        'https://drkarthikmanchala.com/hip-replacement-manikonda',
+        'https://drkarthikmanchala.com/arthroscopy-manikonda',
+        'https://drkarthikmanchala.com/fracture-treatment-manikonda',
+        'https://drkarthikmanchala.com/sports-injury-treatment-manikonda',
+        'https://drkarthikmanchala.com/cases',
       ],
       
       // SEO enhancements

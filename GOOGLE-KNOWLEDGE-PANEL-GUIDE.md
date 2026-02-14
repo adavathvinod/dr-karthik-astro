@@ -154,7 +154,7 @@ Publish high-quality content:
 
 2. **Submit Sitemap**
    ```
-   Add sitemap URL: https://drkmortho.com/sitemap.xml
+   Add sitemap URL: https://drkarthikmanchala.com/sitemap.xml
    ```
 
 3. **Request Indexing**

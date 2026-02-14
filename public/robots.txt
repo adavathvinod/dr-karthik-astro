@@ -2,8 +2,8 @@
 # Last updated: February 14, 2026
 
 # Sitemap Location
-Sitemap: https://drkmortho.com/sitemap-index.xml
-Sitemap: https://drkmortho.com/sitemap-0.xml
+Sitemap: https://drkarthikmanchala.com/sitemap-index.xml
+Sitemap: https://drkarthikmanchala.com/sitemap-0.xml
 
 # Google Bots - Full Access
 User-agent: Googlebot

@@ -61,7 +61,7 @@ dist/
 □ Go to: https://search.google.com/search-console
 □ Add property: drkmortho.com
 □ Verify ownership (upload HTML file or DNS)
-□ Submit sitemap: https://drkmortho.com/sitemap.xml
+□ Submit sitemap: https://drkarthikmanchala.com/sitemap.xml
 □ Request indexing for all pages
 ```
 

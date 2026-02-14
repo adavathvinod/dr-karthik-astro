@@ -317,7 +317,7 @@ server {
 
 [[redirects]]
   from = "https://www.drkmortho.com/*"
-  to = "https://drkmortho.com/:splat"
+  to = "https://drkarthikmanchala.com/:splat"
   status = 301
   force = true
 

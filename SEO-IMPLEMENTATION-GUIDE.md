@@ -39,8 +39,8 @@ This document outlines the enterprise-level SEO implementation for the KM Ortho 
 ## 🗺️ Sitemap Configuration
 
 ### Location
-- Primary: `https://drkmortho.com/sitemap-index.xml`
-- Individual: `https://drkmortho.com/sitemap-0.xml`
+- Primary: `https://drkarthikmanchala.com/sitemap-index.xml`
+- Individual: `https://drkarthikmanchala.com/sitemap-0.xml`
 
 ### Priority Structure
 ```
@@ -167,7 +167,7 @@ Add these JSON-LD schemas to relevant pages:
   "@context": "https://schema.org",
   "@type": ["MedicalOrganization", "Physician"],
   "name": "KM Ortho Clinic - Dr. Karthik Manchala",
-  "image": "https://drkmortho.com/logo.png",
+  "image": "https://drkarthikmanchala.com/logo.png",
   "address": {
     "@type": "PostalAddress",
     "streetAddress": "Manikonda",
@@ -305,7 +305,7 @@ Users can "Add to Home Screen" on mobile devices for app-like experience.
 ### Recommended Tools:
 
 **1. Google Search Console**
-- Submit sitemap: `https://drkmortho.com/sitemap-index.xml`
+- Submit sitemap: `https://drkarthikmanchala.com/sitemap-index.xml`
 - Monitor crawl errors
 - Track search performance
 - Check mobile usability
