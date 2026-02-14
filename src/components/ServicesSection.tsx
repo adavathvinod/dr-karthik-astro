@@ -6,39 +6,46 @@ const services = [
     title: "Knee & Hip Arthritis Treatment",
     description: "Comprehensive care for joint pain and arthritis using advanced treatment methods.",
     image: "/service-knee-hip.jpg",
+    alt: "Knee and hip arthritis treatment by orthopedic specialist in Manikonda",
     link: "/knee-replacement-manikonda",
   },
   {
     title: "Joint Replacement Surgery",
     description: "Expert knee and hip replacement surgeries using modern techniques.",
     image: "/service-joint-replacement.jpg",
+    alt: "Knee and hip joint replacement surgery in Manikonda",
     link: "/knee-replacement-manikonda",
   },
   {
     title: "Fracture Fixation",
     description: "Advanced treatment for all types of bone fractures.",
     image: "/service-fracture.jpg",
+    alt: "Bone fracture fixation and trauma care in Manikonda",
     link: "/fracture-treatment-manikonda",
   },
   {
     title: "Arthroscopy (Key-hole Surgery)",
     description: "Minimally invasive joint procedures with faster recovery.",
     image: "/service-arthroscopy.jpg",
+    alt: "Arthroscopy keyhole knee surgery in Manikonda",
     link: "/arthroscopy-manikonda",
   },
   {
     title: "Ligament Injuries",
     description: "Specialized treatment for ACL and ligament injuries.",
     image: "/service-ligament.jpg",
+    alt: "ACL and ligament injury treatment in Manikonda",
     link: "/sports-injury-treatment-manikonda",
   },
   {
     title: "Back Pain Management",
     description: "Comprehensive diagnosis and treatment of spine-related issues.",
     image: "/service-back-pain.jpg",
-    link: null, // No SEO page exists
+    alt: "Back pain and spine treatment specialist in Manikonda",
+    link: null,
   },
 ];
+
 
 const WHATSAPP_LINK = `https://wa.me/916281894631?text=${encodeURIComponent(
   "Hello, I would like to book an appointment with Dr. Karthik Manchala."
@@ -61,7 +68,7 @@ export function ServicesSection({ showAll = false }: ServicesSectionProps) {
                 <div className="relative h-48 md:h-56 overflow-hidden">
                   <img
                     src={service.image}
-                    alt={`${service.title} in Manikonda`}
+                    alt={service.alt}
                     className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
                     loading="lazy"
                   />
