@@ -28,34 +28,29 @@ export default defineConfig({
       ],
       
       // SEO enhancements
-      serialize(item) {
+      serialize(item: any) {
         // Customize priority based on page importance
         if (item.url.endsWith('/')) {
           item.priority = 1.0; // Homepage
-          item.changefreq = 'daily';
         } else if (
           item.url.includes('knee-replacement') ||
           item.url.includes('hip-replacement') ||
           item.url.includes('arthroscopy')
         ) {
           item.priority = 0.9; // High-priority service pages
-          item.changefreq = 'weekly';
         } else if (
           item.url.includes('services') ||
           item.url.includes('about') ||
           item.url.includes('contact')
         ) {
           item.priority = 0.8; // Important pages
-          item.changefreq = 'weekly';
         } else if (item.url.includes('cases')) {
           item.priority = 0.7; // Case studies
-          item.changefreq = 'monthly';
         } else {
           item.priority = 0.5; // Other pages
-          item.changefreq = 'monthly';
         }
         
-        item.lastmod = new Date();
+        item.lastmod = new Date().toISOString();
         return item;
       },
       
