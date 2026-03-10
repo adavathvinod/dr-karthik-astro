@@ -5,6 +5,7 @@
 # Allow all search engines
 User-agent: *
 Allow: /
+Disallow: /404.html
 
 # Block internal or sensitive files (optional safety)
 Disallow: /cgi-bin/
@@ -14,3 +15,4 @@ Disallow: /*.env$
 
 # Sitemap location
 Sitemap: https://drkarthikmanchala.com/sitemap.xml
+Host: drkarthikmanchala.com

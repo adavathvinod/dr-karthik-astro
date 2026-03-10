@@ -1,0 +1,87 @@
+---
+import Layout from '@/layouts/Layout.astro';
+import { Header } from '@/components/Header';
+import { Footer } from '@/components/Footer';
+import { FloatingButtons } from '@/components/FloatingButtons';
+
+const links = [
+  { name: "Home", href: "/" },
+  { name: "About Doctor", href: "/about" },
+  { name: "Services", href: "/services" },
+  { name: "Cases", href: "/cases" },
+  { name: "Contact", href: "/contact" },
+  { name: "Knee Replacement in Manikonda", href: "/knee-replacement-manikonda" },
+  { name: "Hip Replacement in Manikonda", href: "/hip-replacement-manikonda" },
+  { name: "Arthroscopy in Manikonda", href: "/arthroscopy-manikonda" },
+  { name: "Fracture Treatment in Manikonda", href: "/fracture-treatment-manikonda" },
+  { name: "Sports Injury Treatment in Manikonda", href: "/sports-injury-treatment-manikonda" }
+];
+
+const structuredData = {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "CollectionPage",
+      "name": "Site Navigation",
+      "url": "https://drkarthikmanchala.com/site-navigation",
+      "description": "Complete list of key pages for Dr. Karthik Manchala Ortho Clinic website."
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://drkarthikmanchala.com/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Site Navigation",
+          "item": "https://drkarthikmanchala.com/site-navigation"
+        }
+      ]
+    }
+  ]
+};
+---
+
+<Layout
+  title="Site Navigation | Dr. Karthik Manchala"
+  description="Explore all key pages on Dr. Karthik Manchala Ortho Clinic website."
+  canonicalUrl="/site-navigation"
+  structuredData={structuredData}
+>
+  <div class="min-h-screen bg-background">
+    <Header currentPath="/site-navigation" client:load />
+
+    <section class="section-padding bg-gradient-to-b from-secondary/50 to-background">
+      <div class="section-container max-w-4xl mx-auto text-center">
+        <h1 class="text-4xl md:text-5xl font-bold text-foreground mb-4">Site Navigation</h1>
+        <p class="text-muted-foreground text-lg">
+          Find all important pages for services, doctor profile, cases and contact details.
+        </p>
+      </div>
+    </section>
+
+    <section class="pt-0 pb-16">
+      <div class="section-container max-w-3xl mx-auto">
+        <div class="medical-card p-6 md:p-8">
+          <ul class="grid grid-cols-1 md:grid-cols-2 gap-3">
+            {links.map((link) => (
+              <li>
+                <a href={link.href} class="text-primary hover:underline font-medium">
+                  {link.name}
+                </a>
+              </li>
+            ))}
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <Footer client:load />
+    <FloatingButtons client:load />
+  </div>
+</Layout>

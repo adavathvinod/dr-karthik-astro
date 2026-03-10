@@ -7,11 +7,12 @@ interface Props {
   keywords?: string;
   ogImage?: string;
   canonicalUrl?: string;
+  robots?: string;
   structuredData?: object;
 }
 
 const BASE_URL = "https://drkarthikmanchala.com";
-const DEFAULT_IMAGE = `${BASE_URL}/og-image.jpg`;
+const DEFAULT_IMAGE = `${BASE_URL}/hero-slide-1.jpg`;
 
 const {
   title = "Dr. Karthik Manchala - Best Orthopaedic Surgeon in Hyderabad",
@@ -19,6 +20,7 @@ const {
   keywords,
   ogImage = DEFAULT_IMAGE,
   canonicalUrl = "/",
+  robots = "index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1",
   structuredData
 } = Astro.props;
 
@@ -79,11 +81,9 @@ const url = `${BASE_URL}${canonicalUrl}`;
     <meta name="twitter:site" content="@drkarthik" />
 
     {/* Additional Search Engine Tags */}
-    <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
-    <meta name="googlebot" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
-    <meta name="bingbot" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
-    <meta name="google" content="nositelinkssearchbox" />
-    <meta name="google" content="notranslate" />
+    <meta name="robots" content={robots} />
+    <meta name="googlebot" content={robots} />
+    <meta name="bingbot" content={robots} />
     
     {/* Geographic Meta Tags */}
     <meta name="geo.region" content="IN-TG" />
@@ -93,7 +93,6 @@ const url = `${BASE_URL}${canonicalUrl}`;
     
     {/* Business Information */}
     <meta name="rating" content="General" />
-    <meta name="referrer" content="origin-when-cross-origin" />
     <meta name="format-detection" content="telephone=yes" />
     <meta name="format-detection" content="address=yes" />
     
@@ -112,12 +111,8 @@ const url = `${BASE_URL}${canonicalUrl}`;
     <link rel="manifest" href="/manifest.json" />
     
     {/* Favicons - Complete Set */}
-    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
-    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.png" />
-    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
-    <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#0EA5E9" />
-    <link rel="shortcut icon" href="/favicon.ico" />
+    <link rel="icon" type="image/png" href="/favicon.png" />
+    <link rel="apple-touch-icon" href="/favicon.png" />
     
     {/* Security & Privacy */}
     <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests" />
@@ -153,33 +148,6 @@ const url = `${BASE_URL}${canonicalUrl}`;
       <script type="application/ld+json" set:html={JSON.stringify(structuredData)} />
     )}
 
-    <!-- Google Analytics (GA4) - Replace G-XXXXXXXXXX with your GA4 Measurement ID -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
-    <script is:inline>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-      gtag('config', 'G-XXXXXXXXXX');
-    </script>
-
-    <!-- Facebook Pixel - Replace 'YOUR_PIXEL_ID' with your actual Facebook Pixel ID -->
-    <script is:inline>
-      !function(f,b,e,v,n,t,s)
-      {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
-      n.callMethod.apply(n,arguments):n.queue.push(arguments)};
-      if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
-      n.queue=[];t=b.createElement(e);t.async=!0;
-      t.src=v;s=b.getElementsByTagName(e)[0];
-      s.parentNode.insertBefore(t,s)}(window, document,'script',
-      'https://connect.facebook.net/en_US/fbevents.js');
-      fbq('init', 'YOUR_PIXEL_ID');
-      fbq('track', 'PageView');
-    </script>
-    <noscript>
-      <img height="1" width="1" style="display:none"
-      src="https://www.facebook.com/tr?id=YOUR_PIXEL_ID&ev=PageView&noscript=1"
-      />
-    </noscript>
   </head>
   <body>
     <slot />

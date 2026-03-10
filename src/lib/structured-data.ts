@@ -2,6 +2,7 @@
 // This enables Knowledge Graph, Rich Snippets, and enhanced search appearance
 
 const BASE_URL = "https://drkarthikmanchala.com";
+const CLINIC_ADDRESS = "Rd Number 25, Alkapur Township, Manikonda";
 
 export interface StructuredDataConfig {
   url?: string;
@@ -32,17 +33,17 @@ export const getOrganizationSchema = () => ({
   image: {
     "@type": "ImageObject",
     "@id": `${BASE_URL}/#image`,
-    url: `${BASE_URL}/og-image.jpg`,
+    url: `${BASE_URL}/clinic-reception.png`,
     width: "1200",
     height: "630",
     caption: "Dr. Karthik Manchala Orthopaedic Surgeon"
   },
-  description: "Premier orthopaedic clinic in Hyderabad with 12+ years of expertise in joint replacement, arthroscopy, and sports injury treatment. Led by Dr. Karthik Manchala, MS Orthopaedics.",
+  description: "Premier orthopaedic clinic in Hyderabad with 12+ years of expertise in joint replacement, arthroscopy, and sports injury treatment. Led by Dr. Karthik Manchala, DNB Orthopaedics.",
   telephone: "+91-628-189-4631",
   email: "contact@drkarthikmanchala.com",
   address: {
     "@type": "PostalAddress",
-    streetAddress: "Puppalguda, Manikonda",
+    streetAddress: CLINIC_ADDRESS,
     addressLocality: "Hyderabad",
     addressRegion: "Telangana",
     postalCode: "500089",
@@ -74,8 +75,20 @@ export const getOrganizationSchema = () => ({
     {
       "@type": "OpeningHoursSpecification",
       dayOfWeek: ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"],
-      opens: "09:00",
-      closes: "20:00"
+      opens: "10:00",
+      closes: "14:00"
+    },
+    {
+      "@type": "OpeningHoursSpecification",
+      dayOfWeek: ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"],
+      opens: "17:00",
+      closes: "21:00"
+    },
+    {
+      "@type": "OpeningHoursSpecification",
+      dayOfWeek: ["Sunday"],
+      opens: "11:00",
+      closes: "14:00"
     }
   ],
   founder: {
@@ -132,8 +145,7 @@ export const getOrganizationSchema = () => ({
       contactType: "customer service",
       email: "contact@drkarthikmanchala.com",
       availableLanguage: ["English", "Hindi", "Telugu"],
-      areaServed: "IN",
-      contactOption: "TollFree"
+      areaServed: "IN"
     },
     {
       "@type": "ContactPoint",
@@ -162,10 +174,10 @@ export const getPersonSchema = () => ({
   givenName: "Karthik",
   familyName: "Manchala",
   jobTitle: "Orthopaedic, Joint Replacement & Arthroscopic Surgeon",
-  description: "MS Orthopaedics with 12+ years of experience. Specialist in joint replacement, arthroscopy, and sports injury treatment. Trained at NIMS, Hyderabad.",
+  description: "DNB Orthopaedics with 12+ years of experience. Specialist in joint replacement, arthroscopy, and sports injury treatment. Trained at P.D. Hinduja Hospital, Mumbai.",
   image: {
     "@type": "ImageObject",
-    url: `${BASE_URL}/doctor-image.jpg`,
+    url: `${BASE_URL}/doctor-portrait.png`,
     caption: "Dr. Karthik Manchala"
   },
   url: BASE_URL,
@@ -177,15 +189,15 @@ export const getPersonSchema = () => ({
   alumniOf: [
     {
       "@type": "EducationalOrganization",
-      name: "NIMS (Nizam's Institute of Medical Sciences)",
-      location: "Hyderabad, India"
+      name: "P.D. Hinduja Hospital",
+      location: "Mumbai, India"
     }
   ],
   hasCredential: [
     {
       "@type": "EducationalOccupationalCredential",
       credentialCategory: "degree",
-      name: "MS Orthopaedics"
+      name: "DNB Orthopaedics"
     },
     {
       "@type": "EducationalOccupationalCredential",
@@ -223,15 +235,7 @@ export const getWebsiteSchema = () => ({
   publisher: {
     "@id": `${BASE_URL}/#organization`
   },
-  inLanguage: "en-IN",
-  potentialAction: {
-    "@type": "SearchAction",
-    target: {
-      "@type": "EntryPoint",
-      urlTemplate: `${BASE_URL}/services?q={search_term_string}`
-    },
-    "query-input": "required name=search_term_string"
-  }
+  inLanguage: "en-IN"
 });
 
 // Breadcrumb Schema
@@ -304,7 +308,7 @@ export const getArticleSchema = (config: StructuredDataConfig) => ({
   headline: config.title,
   description: config.description,
   url: `${BASE_URL}${config.url}`,
-  image: config.image || `${BASE_URL}/og-image.jpg`,
+  image: config.image || `${BASE_URL}/hero-slide-1.jpg`,
   datePublished: config.datePublished || new Date().toISOString(),
   dateModified: config.dateModified || new Date().toISOString(),
   author: {
@@ -325,10 +329,10 @@ export const getLocalBusinessSchema = () => ({
   "@type": "MedicalClinic",
   "@id": `${BASE_URL}/#local-business`,
   name: "Dr. Karthik Manchala Ortho Clinic",
-  image: `${BASE_URL}/clinic-image.jpg`,
+  image: `${BASE_URL}/clinic-reception.png`,
   address: {
     "@type": "PostalAddress",
-    streetAddress: "Puppalguda, Manikonda",
+    streetAddress: CLINIC_ADDRESS,
     addressLocality: "Hyderabad",
     addressRegion: "Telangana",
     postalCode: "500089",
@@ -346,8 +350,20 @@ export const getLocalBusinessSchema = () => ({
     {
       "@type": "OpeningHoursSpecification",
       dayOfWeek: ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"],
-      opens: "09:00",
-      closes: "20:00"
+      opens: "10:00",
+      closes: "14:00"
+    },
+    {
+      "@type": "OpeningHoursSpecification",
+      dayOfWeek: ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"],
+      opens: "17:00",
+      closes: "21:00"
+    },
+    {
+      "@type": "OpeningHoursSpecification",
+      dayOfWeek: ["Sunday"],
+      opens: "11:00",
+      closes: "14:00"
     }
   ],
   hasMap: "https://maps.google.com/?q=Dr+Karthik+Manchala+Ortho+Clinic+Manikonda+Hyderabad"

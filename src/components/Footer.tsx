@@ -1,5 +1,4 @@
-import { Phone, MessageCircle, MapPin, Clock, Mail } from "lucide-react";
-import logo from "@/assets/logo.png";
+import { Phone, MessageCircle, MapPin, Clock } from "lucide-react";
 
 export function Footer() {
   return (
@@ -46,6 +45,7 @@ export function Footer() {
                 { name: "Our Services", path: "/services" },
                 { name: "Cases & Results", path: "/cases" },
                 { name: "Contact Us", path: "/contact" },
+                { name: "All Pages", path: "/site-navigation" },
               ].map((link) => (
                 <li key={link.path}>
                   <a

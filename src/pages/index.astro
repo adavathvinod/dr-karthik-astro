@@ -20,7 +20,67 @@ const stats = [
 ];
 
 // Enterprise-level Structured Data for Google Knowledge Graph
-const structuredData = getCompleteHomeSchema();
+const baseSchema = getCompleteHomeSchema();
+
+const homeFaqs = [
+  {
+    question: "Who is Dr. Karthik Manchala?",
+    answer: "Dr. Karthik Manchala is an orthopaedic, joint replacement and arthroscopic surgeon in Manikonda, Hyderabad with 12+ years of experience."
+  },
+  {
+    question: "Where is Dr. Karthik Manchala Ortho Clinic located?",
+    answer: "The clinic is located at Rd Number 25, Alkapur Township, Manikonda, Hyderabad, Telangana 500089."
+  },
+  {
+    question: "What orthopaedic services are available?",
+    answer: "The clinic provides knee replacement, hip replacement, arthroscopy, fracture treatment, ligament injury treatment and sports injury care."
+  },
+  {
+    question: "How can I book an appointment?",
+    answer: "You can book by calling +91 62818 94631, messaging on WhatsApp, or using the appointment form on the contact page."
+  }
+];
+
+const homeFaqSchema = {
+  "@type": "FAQPage",
+  "@id": "https://drkarthikmanchala.com/#faq",
+  "mainEntity": homeFaqs.map((faq) => ({
+    "@type": "Question",
+    "name": faq.question,
+    "acceptedAnswer": {
+      "@type": "Answer",
+      "text": faq.answer
+    }
+  }))
+};
+
+const siteNavigationSchema = {
+  "@type": "SiteNavigationElement",
+  "@id": "https://drkarthikmanchala.com/#site-navigation",
+  "name": [
+    "Home",
+    "About Doctor",
+    "Services",
+    "Cases",
+    "Contact"
+  ],
+  "url": [
+    "https://drkarthikmanchala.com/",
+    "https://drkarthikmanchala.com/about",
+    "https://drkarthikmanchala.com/services",
+    "https://drkarthikmanchala.com/cases",
+    "https://drkarthikmanchala.com/contact"
+  ]
+};
+
+const structuredData = {
+  "@context": "https://schema.org",
+  "@graph": [
+    ...(baseSchema["@graph"] ?? []),
+    siteNavigationSchema,
+    homeFaqSchema
+  ]
+};
 ---
 
 <Layout
@@ -126,6 +186,23 @@ const structuredData = getCompleteHomeSchema();
     </p>
   </div>
 </section>
+
+    <section class="pt-0 pb-16 bg-background">
+      <div class="section-container max-w-4xl mx-auto">
+        <div class="text-center mb-10">
+          <h2 class="text-3xl font-bold text-foreground mb-3">Frequently Asked Questions</h2>
+          <p class="text-muted-foreground">Quick answers about Dr. Karthik Manchala and our orthopaedic clinic in Manikonda.</p>
+        </div>
+        <div class="space-y-5">
+          {homeFaqs.map((faq, index) => (
+            <article key={index} class="medical-card p-6">
+              <h3 class="text-lg font-semibold text-foreground mb-2">{faq.question}</h3>
+              <p class="text-muted-foreground leading-relaxed">{faq.answer}</p>
+            </article>
+          ))}
+        </div>
+      </div>
+    </section>
 
     {/* Clinic Timings */}
     <ClinicTimings client:load />
