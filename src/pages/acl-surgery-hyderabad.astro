@@ -1,0 +1,200 @@
+---
+import Layout from '@/layouts/Layout.astro';
+import { Header } from '@/components/Header';
+import { Footer } from '@/components/Footer';
+import { FloatingButtons } from '@/components/FloatingButtons';
+import { BookingForm } from '@/components/BookingForm';
+
+const breadcrumbSchema = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Home",
+      "item": "https://drkarthikmanchala.com"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Services",
+      "item": "https://drkarthikmanchala.com/services"
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "name": "ACL Surgery Hyderabad",
+      "item": "https://drkarthikmanchala.com/acl-surgery-hyderabad"
+    }
+  ]
+};
+
+const medicalProcedureSchema = {
+  "@context": "https://schema.org",
+  "@type": "MedicalProcedure",
+  "name": "ACL Reconstruction Surgery",
+  "procedureType": "ReconstructiveSurgery",
+  "bodyLocation": "Knee Joint",
+  "performer": {
+    "@type": "Physician",
+    "name": "Dr. Karthik Manchala"
+  },
+  "availableAtOrFrom": {
+    "@type": "MedicalClinic",
+    "name": "Dr. Karthik Manchala Ortho Clinic",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "Rd Number 25, Alkapur Township",
+      "addressLocality": "Manikonda, Hyderabad",
+      "addressRegion": "Telangana",
+      "postalCode": "500089",
+      "addressCountry": "IN"
+    }
+  }
+};
+
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Who is the best ACL surgeon in Hyderabad?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Dr. Karthik Manchala is an experienced orthopaedic and arthroscopic surgeon in Hyderabad providing ACL reconstruction with personalized rehabilitation support."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "When is ACL surgery required?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "ACL surgery is usually recommended for complete ACL tears with knee instability, especially in active individuals, athletes, or patients with repeated knee giving-way episodes."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Is ACL surgery done by arthroscopy?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. Most ACL reconstructions are performed using arthroscopic keyhole techniques, which reduce soft tissue damage and support a structured recovery plan."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How long does ACL recovery take?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Initial recovery generally takes a few weeks, while full functional recovery and return to sports may take 6 to 9 months depending on rehabilitation progress and patient goals."
+      }
+    }
+  ]
+};
+
+const pageStructuredData = {
+  "@context": "https://schema.org",
+  "@graph": [
+    breadcrumbSchema,
+    medicalProcedureSchema,
+    faqSchema,
+    {
+      "@type": "WebPage",
+      "name": "Best ACL Surgeon in Hyderabad",
+      "url": "https://drkarthikmanchala.com/acl-surgery-hyderabad"
+    }
+  ]
+};
+---
+
+<Layout
+  title="Best ACL Surgeon in Hyderabad"
+  description="Looking for ACL surgery in Hyderabad? Dr. Karthik Manchala offers advanced ACL reconstruction and ligament injury treatment in Manikonda, Hyderabad 500089."
+  keywords="acl surgeon hyderabad, acl surgery hyderabad, acl reconstruction hyderabad, ligament reconstruction surgeon hyderabad, knee ligament doctor hyderabad"
+  canonicalUrl="/acl-surgery-hyderabad"
+  structuredData={pageStructuredData}
+>
+  <div class="min-h-screen bg-background">
+    <Header currentPath="/acl-surgery-hyderabad" client:load />
+
+    {/* Hero Section */}
+    <section class="bg-gradient-to-b from-secondary/50 to-background section-padding">
+      <div class="section-container text-center">
+        <h1 class="text-4xl md:text-5xl font-bold text-foreground mb-4">
+          ACL Surgery in Hyderabad
+        </h1>
+        <p class="text-lg text-muted-foreground max-w-3xl mx-auto">
+          Dr. Karthik Manchala provides advanced ACL reconstruction surgery in Hyderabad
+          using minimally invasive arthroscopic techniques. Patients from Manikonda,
+          Alkapur Township, Puppalaguda, Narsingi, and nearby areas receive focused,
+          evidence-based ligament injury care.
+        </p>
+      </div>
+    </section>
+
+    {/* Content Section */}
+    <section class="section-padding">
+      <div class="section-container max-w-4xl mx-auto space-y-8">
+
+        <h2 class="text-2xl font-bold text-foreground">
+          Expert ACL Reconstruction by Orthopaedic Specialist
+        </h2>
+        <p class="text-muted-foreground leading-relaxed">
+          ACL tears commonly occur due to sports injuries, twisting trauma, and sudden
+          knee movements. At Dr. Karthik Manchala Ortho Clinic, patients undergo detailed
+          clinical assessment and imaging to confirm ligament damage and treatment needs.
+        </p>
+
+        <h2 class="text-2xl font-bold text-foreground">
+          Common ACL-Related Problems Treated
+        </h2>
+        <ul class="space-y-3 text-muted-foreground">
+          <li class="flex gap-2">
+            <span class="text-primary font-semibold">•</span>
+            Complete and partial ACL tears
+          </li>
+          <li class="flex gap-2">
+            <span class="text-primary font-semibold">•</span>
+            ACL with meniscus injuries
+          </li>
+          <li class="flex gap-2">
+            <span class="text-primary font-semibold">•</span>
+            Recurrent knee instability after old ligament injury
+          </li>
+          <li class="flex gap-2">
+            <span class="text-primary font-semibold">•</span>
+            Sports-related knee ligament trauma
+          </li>
+        </ul>
+
+        <h2 class="text-2xl font-bold text-foreground">
+          Arthroscopic ACL Surgery and Recovery Guidance
+        </h2>
+        <p class="text-muted-foreground leading-relaxed">
+          ACL reconstruction is typically performed with keyhole arthroscopy, allowing
+          precise graft placement and lower soft tissue trauma. Post-surgery, a structured
+          rehabilitation protocol helps regain strength, balance, and confidence for return
+          to daily activity and sports.
+        </p>
+
+        <h2 class="text-2xl font-bold text-foreground">
+          Why Choose Dr. Karthik Manchala for ACL Surgery?
+        </h2>
+        <p class="text-muted-foreground leading-relaxed">
+          With over 12 years of orthopaedic and arthroscopic experience, Dr. Karthik
+          Manchala focuses on accurate diagnosis, minimally invasive treatment, and
+          individualized recovery planning. Patients trust his clear guidance and
+          patient-centered approach for ligament reconstruction in Hyderabad.
+        </p>
+
+      </div>
+    </section>
+
+    {/* Booking */}
+    <BookingForm client:load />
+
+    <Footer client:load />
+    <FloatingButtons client:load />
+  </div>
+</Layout>
