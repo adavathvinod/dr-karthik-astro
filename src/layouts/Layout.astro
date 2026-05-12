@@ -148,6 +148,15 @@ const url = `${BASE_URL}${canonicalUrl}`;
       <script type="application/ld+json" set:html={JSON.stringify(structuredData)} />
     )}
 
+    {/* Google Analytics */}
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-EYL3T1F4QQ"></script>
+    <script is:inline>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){window.dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-EYL3T1F4QQ');
+    </script>
+
   </head>
   <body>
     <slot />
