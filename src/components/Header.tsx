@@ -7,6 +7,7 @@ const navLinks = [
   { name: "About", path: "/about" },
   { name: "Services", path: "/services" },
   { name: "Cases", path: "/cases" },
+  { name: "Blog", path: "/blog/"},
   { name: "Contact", path: "/contact" },
 ];
 
@@ -96,8 +97,9 @@ export function Header({ currentPath = "/" }: HeaderProps) {
                 <a
                   key={link.path}
                   href={link.path}
+                  {...(link.external ? { target: "_blank", rel: "noopener noreferrer" } : {})}
                   className={`text-sm font-medium transition-colors hover:text-primary ${
-                    currentPath === link.path ? "text-primary" : "text-muted-foreground"
+                    !link.external && currentPath === link.path ? "text-primary" : "text-muted-foreground"
                   }`}
                 >
                   {link.name}
@@ -200,8 +202,9 @@ export function Header({ currentPath = "/" }: HeaderProps) {
                     key={link.path}
                     href={link.path}
                     onClick={() => setIsOpen(false)}
+                    {...(link.external ? { target: "_blank", rel: "noopener noreferrer" } : {})}
                     className={`px-4 py-3 rounded-lg text-sm font-medium transition-colors ${
-                      currentPath === link.path
+                      !link.external && currentPath === link.path
                         ? "bg-secondary text-primary"
                         : "text-muted-foreground hover:bg-muted"
                     }`}
