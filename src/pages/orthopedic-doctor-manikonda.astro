@@ -1,0 +1,229 @@
+---
+import Layout from '@/layouts/Layout.astro';
+import { Header } from '@/components/Header';
+import { Footer } from '@/components/Footer';
+import { FloatingButtons } from '@/components/FloatingButtons';
+import { BookingForm } from '@/components/BookingForm';
+import { CheckCircle2 } from 'lucide-react';
+
+const breadcrumbSchema = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Home",
+      "item": "https://drkarthikmanchala.com"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Services",
+      "item": "https://drkarthikmanchala.com/services"
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "name": "Orthopedic Doctor in Manikonda",
+      "item": "https://drkarthikmanchala.com/orthopedic-doctor-manikonda"
+    }
+  ]
+};
+
+const medicalProcedureSchema = {
+  "@context": "https://schema.org",
+  "@type": "MedicalBusiness",
+  "name": "Dr. Karthik Manchala Ortho Clinic",
+  "description": "Orthopedic doctor specializing in fractures, joint pain, sports injuries, arthritis, and advanced bone care treatments.",
+  "medicalSpecialty": "Orthopedic Surgery",
+  "performer": {
+    "@type": "Physician",
+    "name": "Dr. Karthik Manchala"
+  },
+  "availableAtOrFrom": {
+    "@type": "MedicalClinic",
+    "name": "Dr. Karthik Manchala Ortho Clinic",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "Rd Number 25, Alkapur Township",
+      "addressLocality": "Manikonda, Hyderabad",
+      "addressRegion": "Telangana",
+      "postalCode": "500089",
+      "addressCountry": "IN"
+    }
+  }
+};
+
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Who is the best orthopedic doctor in Manikonda?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Dr. Karthik Manchala is an experienced orthopedic surgeon in Manikonda with over 12 years of expertise in treating fractures, joint pain, arthritis, sports injuries, and advanced bone care."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What conditions does an orthopedic doctor treat?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Orthopedic doctors treat bone fractures, joint pain, arthritis, ligament injuries, sports injuries, degenerative disc disease, and various musculoskeletal conditions."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "When should I visit an orthopedic doctor?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "You should visit an orthopedic doctor if you experience bone fractures, persistent joint pain, arthritis, sports injuries, back pain, or any musculoskeletal issues affecting your daily life."
+      }
+    }
+  ]
+};
+
+const pageStructuredData = {
+  "@context": "https://schema.org",
+  "@graph": [
+    breadcrumbSchema,
+    medicalProcedureSchema,
+    faqSchema,
+    {
+      "@type": "WebPage",
+      "name": "Orthopedic Doctor in Manikonda | Dr. Karthik Manchala",
+      "url": "https://drkarthikmanchala.com/orthopedic-doctor-manikonda"
+    }
+  ]
+};
+---
+
+<Layout
+  title="Orthopedic doctor in Manikonda | Dr. Karthik Manchala"
+  description="Consult the best orthopedic doctor in Manikonda for fractures, joint pain, sports injuries, arthritis, and advanced bone care treatments."
+  keywords="orthopedic doctor manikonda, best orthopedic surgeon manikonda, bone specialist hyderabad, orthopedic treatment manikonda, joint pain doctor manikonda"
+  canonicalUrl="/orthopedic-doctor-manikonda"
+  structuredData={pageStructuredData}
+>
+  <div class="min-h-screen bg-background">
+    <Header currentPath="/orthopedic-doctor-manikonda" client:load />
+
+    {/* Hero Section */}
+    <section class="bg-gradient-to-b from-secondary/50 to-background section-padding">
+      <div class="section-container text-center">
+        <h1 class="text-4xl md:text-5xl font-bold text-foreground mb-4">
+          Orthopedic Doctor in Manikonda
+        </h1>
+        <p class="text-lg text-muted-foreground max-w-3xl mx-auto">
+          Dr. Karthik Manchala is an experienced orthopedic surgeon in Manikonda,
+          Alkapur Township, Hyderabad 500089. He provides comprehensive treatment
+          for fractures, joint pain, arthritis, sports injuries, and advanced bone care.
+        </p>
+      </div>
+    </section>
+
+    {/* Content Section */}
+    <section class="section-padding">
+      <div class="section-container max-w-4xl mx-auto space-y-8">
+
+        <h2 class="text-2xl font-bold text-foreground">
+          Expert Orthopedic Care in Manikonda
+        </h2>
+        <p class="text-muted-foreground leading-relaxed">
+          At Dr. Karthik Manchala Ortho Clinic located at Rd Number 25, Alkapur Township,
+          Manikonda, patients receive expert orthopedic diagnosis and treatment tailored to
+          their specific condition. With over 12 years of experience, Dr. Manchala specializes
+          in treating a wide range of musculoskeletal conditions using modern and minimally
+          invasive techniques.
+        </p>
+
+        <h2 class="text-2xl font-bold text-foreground">
+          Conditions Treated
+        </h2>
+        <ul class="space-y-3 text-muted-foreground">
+          <li class="flex gap-2">
+            <CheckCircle2 class="w-5 h-5 text-primary flex-shrink-0" />
+            <span>Bone fractures and trauma injuries</span>
+          </li>
+          <li class="flex gap-2">
+            <CheckCircle2 class="w-5 h-5 text-primary flex-shrink-0" />
+            <span>Joint pain and arthritis (knee, hip, shoulder)</span>
+          </li>
+          <li class="flex gap-2">
+            <CheckCircle2 class="w-5 h-5 text-primary flex-shrink-0" />
+            <span>Sports injuries and ligament damage</span>
+          </li>
+          <li class="flex gap-2">
+            <CheckCircle2 class="w-5 h-5 text-primary flex-shrink-0" />
+            <span>Degenerative joint disease</span>
+          </li>
+          <li class="flex gap-2">
+            <CheckCircle2 class="w-5 h-5 text-primary flex-shrink-0" />
+            <span>Spinal and back conditions</span>
+          </li>
+          <li class="flex gap-2">
+            <CheckCircle2 class="w-5 h-5 text-primary flex-shrink-0" />
+            <span>Orthopedic rehabilitation and physiotherapy guidance</span>
+          </li>
+        </ul>
+
+        <h2 class="text-2xl font-bold text-foreground">
+          Advanced Bone Care Treatments
+        </h2>
+        <p class="text-muted-foreground leading-relaxed">
+          Dr. Karthik Manchala offers advanced orthopedic treatments including joint
+          replacement surgeries, arthroscopic procedures, fracture fixation, ligament
+          reconstruction, and specialized pain management. His approach combines modern
+          diagnostic techniques with proven treatment methods to ensure optimal outcomes
+          and faster recovery.
+        </p>
+
+        <h2 class="text-2xl font-bold text-foreground">
+          Why Choose Dr. Karthik Manchala?
+        </h2>
+        <ul class="space-y-3 text-muted-foreground">
+          <li class="flex gap-2">
+            <CheckCircle2 class="w-5 h-5 text-primary flex-shrink-0" />
+            <span>Over 12 years of orthopedic experience</span>
+          </li>
+          <li class="flex gap-2">
+            <CheckCircle2 class="w-5 h-5 text-primary flex-shrink-0" />
+            <span>Specialized expertise in minimally invasive techniques</span>
+          </li>
+          <li class="flex gap-2">
+            <CheckCircle2 class="w-5 h-5 text-primary flex-shrink-0" />
+            <span>Patient-centered approach with personalized treatment plans</span>
+          </li>
+          <li class="flex gap-2">
+            <CheckCircle2 class="w-5 h-5 text-primary flex-shrink-0" />
+            <span>State-of-the-art facilities and equipment</span>
+          </li>
+          <li class="flex gap-2">
+            <CheckCircle2 class="w-5 h-5 text-primary flex-shrink-0" />
+            <span>Trusted by patients from Manikonda, Alkapur, Puppalaguda, and surrounding areas</span>
+          </li>
+        </ul>
+
+        <h2 class="text-2xl font-bold text-foreground">
+          Serving Manikonda and Surrounding Areas
+        </h2>
+        <p class="text-muted-foreground leading-relaxed">
+          Dr. Karthik Manchala provides comprehensive orthopedic care to patients from
+          Manikonda, Alkapur Township, Puppalaguda, Narsingi, and other parts of Hyderabad.
+          Whether you're dealing with acute fractures, chronic joint pain, or sports injuries,
+          our clinic is equipped to provide the best orthopedic treatment available.
+        </p>
+
+      </div>
+    </section>
+
+    {/* Booking */}
+    <BookingForm client:load />
+
+    <Footer client:load />
+    <FloatingButtons client:load />
+  </div>
+</Layout>

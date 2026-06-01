@@ -1,0 +1,257 @@
+---
+import Layout from '@/layouts/Layout.astro';
+import { Header } from '@/components/Header';
+import { Footer } from '@/components/Footer';
+import { FloatingButtons } from '@/components/FloatingButtons';
+import { BookingForm } from '@/components/BookingForm';
+import { CheckCircle2 } from 'lucide-react';
+
+const breadcrumbSchema = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Home",
+      "item": "https://drkarthikmanchala.com"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Services",
+      "item": "https://drkarthikmanchala.com/services"
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "name": "Sports Injury Specialist in Hyderabad",
+      "item": "https://drkarthikmanchala.com/sports-injury-specialist-hyderabad"
+    }
+  ]
+};
+
+const medicalProcedureSchema = {
+  "@context": "https://schema.org",
+  "@type": "MedicalBusiness",
+  "name": "Dr. Karthik Manchala Ortho Clinic",
+  "description": "Expert sports injury specialist in Hyderabad for ACL tears, ligament injuries, arthroscopy, rehabilitation, and faster recovery treatments.",
+  "medicalSpecialty": "Sports Medicine and Orthopedic Surgery",
+  "performer": {
+    "@type": "Physician",
+    "name": "Dr. Karthik Manchala"
+  },
+  "availableAtOrFrom": {
+    "@type": "MedicalClinic",
+    "name": "Dr. Karthik Manchala Ortho Clinic",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "Rd Number 25, Alkapur Township",
+      "addressLocality": "Manikonda, Hyderabad",
+      "addressRegion": "Telangana",
+      "postalCode": "500089",
+      "addressCountry": "IN"
+    }
+  }
+};
+
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Who is the best sports injury specialist in Hyderabad?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Dr. Karthik Manchala is an expert sports injury specialist in Hyderabad with specialized training in treating ACL tears, ligament injuries, sports injuries, and athletic rehabilitation."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What is ACL reconstruction and when is it needed?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "ACL reconstruction is a surgical procedure to repair a torn anterior cruciate ligament. It is recommended for athletes and active individuals with complete ACL tears causing knee instability."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How long does recovery take after sports injury surgery?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Recovery time depends on the injury and procedure. Minor sports injuries may recover within weeks, while ACL reconstruction requires structured rehabilitation over 4-6 months for full recovery."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What sports injuries can arthroscopy treat?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Arthroscopy can treat ACL tears, meniscus injuries, cartilage damage, shoulder labral tears, and other joint injuries with minimal invasiveness and faster recovery compared to open surgery."
+      }
+    }
+  ]
+};
+
+const pageStructuredData = {
+  "@context": "https://schema.org",
+  "@graph": [
+    breadcrumbSchema,
+    medicalProcedureSchema,
+    faqSchema,
+    {
+      "@type": "WebPage",
+      "name": "Sports Injury Specialist in Hyderabad | Dr. Karthik Manchala",
+      "url": "https://drkarthikmanchala.com/sports-injury-specialist-hyderabad"
+    }
+  ]
+};
+---
+
+<Layout
+  title="sports injury specialist in Hyderabad  | Dr. Karthik Manchala"
+  description="Expert sports injury specialist in Hyderabad for ACL tears, ligament injuries, arthroscopy, rehabilitation, and faster recovery treatments."
+  keywords="sports injury specialist hyderabad, acl tear treatment hyderabad, ligament injury specialist, arthroscopy surgeon hyderabad, sports medicine doctor hyderabad, athletic injury treatment"
+  canonicalUrl="/sports-injury-specialist-hyderabad"
+  structuredData={pageStructuredData}
+>
+  <div class="min-h-screen bg-background">
+    <Header currentPath="/sports-injury-specialist-hyderabad" client:load />
+
+    {/* Hero Section */}
+    <section class="bg-gradient-to-b from-secondary/50 to-background section-padding">
+      <div class="section-container text-center">
+        <h1 class="text-4xl md:text-5xl font-bold text-foreground mb-4">
+          Sports Injury Specialist in Hyderabad
+        </h1>
+        <p class="text-lg text-muted-foreground max-w-3xl mx-auto">
+          Dr. Karthik Manchala is an expert sports injury specialist in Hyderabad offering
+          specialized treatment for ACL tears, ligament injuries, arthroscopy, rehabilitation,
+          and faster recovery for athletes and active individuals.
+        </p>
+      </div>
+    </section>
+
+    {/* Content Section */}
+    <section class="section-padding">
+      <div class="section-container max-w-4xl mx-auto space-y-8">
+
+        <h2 class="text-2xl font-bold text-foreground">
+          Specialized Sports Injury Treatment in Hyderabad
+        </h2>
+        <p class="text-muted-foreground leading-relaxed">
+          At Dr. Karthik Manchala Ortho Clinic in Manikonda, Hyderabad, athletes and active
+          individuals receive expert sports injury treatment. Dr. Manchala specializes in
+          diagnosing and treating sports-related injuries including ACL tears, ligament
+          damage, and other athletic injuries that affect performance and mobility.
+        </p>
+
+        <h2 class="text-2xl font-bold text-foreground">
+          Sports Injuries Treated
+        </h2>
+        <ul class="space-y-3 text-muted-foreground">
+          <li class="flex gap-2">
+            <CheckCircle2 class="w-5 h-5 text-primary flex-shrink-0" />
+            <span>ACL (Anterior Cruciate Ligament) tears</span>
+          </li>
+          <li class="flex gap-2">
+            <CheckCircle2 class="w-5 h-5 text-primary flex-shrink-0" />
+            <span>Ligament injuries (PCL, MCL, lateral ligaments)</span>
+          </li>
+          <li class="flex gap-2">
+            <CheckCircle2 class="w-5 h-5 text-primary flex-shrink-0" />
+            <span>Meniscus tears and cartilage damage</span>
+          </li>
+          <li class="flex gap-2">
+            <CheckCircle2 class="w-5 h-5 text-primary flex-shrink-0" />
+            <span>Shoulder dislocations and rotator cuff injuries</span>
+          </li>
+          <li class="flex gap-2">
+            <CheckCircle2 class="w-5 h-5 text-primary flex-shrink-0" />
+            <span>Ankle sprains and sports fractures</span>
+          </li>
+          <li class="flex gap-2">
+            <CheckCircle2 class="w-5 h-5 text-primary flex-shrink-0" />
+            <span>Tennis elbow and repetitive strain injuries</span>
+          </li>
+        </ul>
+
+        <h2 class="text-2xl font-bold text-foreground">
+          ACL Reconstruction & Advanced Treatment
+        </h2>
+        <p class="text-muted-foreground leading-relaxed">
+          For severe ligament injuries like ACL tears, Dr. Karthik Manchala performs
+          advanced arthroscopic ACL reconstruction surgery. This minimally invasive
+          procedure restores joint stability and enables athletes to return to their
+          sports safely. Using modern surgical techniques, he achieves excellent outcomes
+          with faster recovery times compared to traditional open surgery.
+        </p>
+
+        <h2 class="text-2xl font-bold text-foreground">
+          Arthroscopy - Minimally Invasive Sports Surgery
+        </h2>
+        <p class="text-muted-foreground leading-relaxed">
+          Arthroscopy is a keyhole surgery technique that allows Dr. Manchala to diagnose
+          and treat joint injuries with minimal tissue damage. This approach offers several
+          advantages including smaller incisions, reduced scarring, less post-operative pain,
+          and faster recovery compared to traditional open surgery. Athletes can return to
+          training and competition sooner.
+        </p>
+
+        <h2 class="text-2xl font-bold text-foreground">
+          Rehabilitation and Recovery Programs
+        </h2>
+        <p class="text-muted-foreground leading-relaxed">
+          Recovery from sports injuries requires more than just surgery. Dr. Karthik Manchala
+          provides personalized rehabilitation guidance and structured recovery programs to
+          help athletes regain strength, flexibility, and confidence. His comprehensive approach
+          ensures faster recovery and reduces the risk of re-injury.
+        </p>
+
+        <h2 class="text-2xl font-bold text-foreground">
+          Why Choose Dr. Karthik Manchala for Sports Injuries?
+        </h2>
+        <ul class="space-y-3 text-muted-foreground">
+          <li class="flex gap-2">
+            <CheckCircle2 class="w-5 h-5 text-primary flex-shrink-0" />
+            <span>Expert in sports medicine and orthopedic surgery</span>
+          </li>
+          <li class="flex gap-2">
+            <CheckCircle2 class="w-5 h-5 text-primary flex-shrink-0" />
+            <span>Specialized in minimally invasive arthroscopic procedures</span>
+          </li>
+          <li class="flex gap-2">
+            <CheckCircle2 class="w-5 h-5 text-primary flex-shrink-0" />
+            <span>Personalized treatment plans for faster athlete recovery</span>
+          </li>
+          <li class="flex gap-2">
+            <CheckCircle2 class="w-5 h-5 text-primary flex-shrink-0" />
+            <span>Over 12 years of experience treating sports injuries</span>
+          </li>
+          <li class="flex gap-2">
+            <CheckCircle2 class="w-5 h-5 text-primary flex-shrink-0" />
+            <span>Trusted by athletes and active individuals across Hyderabad</span>
+          </li>
+        </ul>
+
+        <h2 class="text-2xl font-bold text-foreground">
+          Serving Athletes Across Hyderabad
+        </h2>
+        <p class="text-muted-foreground leading-relaxed">
+          Whether you're a professional athlete, weekend warrior, or active individual,
+          Dr. Karthik Manchala at his clinic in Manikonda, Hyderabad provides expert
+          sports injury treatment. He serves patients from across Hyderabad including
+          Manikonda, Alkapur, Puppalaguda, Narsingi, and surrounding areas.
+        </p>
+
+      </div>
+    </section>
+
+    {/* Booking */}
+    <BookingForm client:load />
+
+    <Footer client:load />
+    <FloatingButtons client:load />
+  </div>
+</Layout>

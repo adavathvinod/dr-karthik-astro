@@ -12,6 +12,8 @@ const navLinks = [
 ];
 
 const serviceSubLinks = [
+  { name: "Orthopedic Doctor in Manikonda", path: "/orthopedic-doctor-manikonda" },
+  { name: "Sports Injury Specialist in Hyderabad", path: "/sports-injury-specialist-hyderabad" },
   { name: "Knee Replacement in Manikonda", path: "/knee-replacement-manikonda" },
   { name: "Hip Replacement in Manikonda", path: "/hip-replacement-manikonda" },
   { name: "Arthroscopy in Manikonda", path: "/arthroscopy-manikonda" },

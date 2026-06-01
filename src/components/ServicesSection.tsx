@@ -3,6 +3,20 @@ import { Button } from "@/components/ui/button";
 
 const services = [
   {
+    title: "Orthopedic Doctor in Manikonda",
+    description: "Expert orthopedic care for fractures, joint pain, arthritis, sports injuries, and advanced bone care.",
+    image: "/service-orthopedic.jpg",
+    alt: "Orthopedic doctor in Manikonda for fractures, joint pain and arthritis treatment",
+    link: "/orthopedic-doctor-manikonda",
+  },
+  {
+    title: "Sports Injury Specialist",
+    description: "Specialized treatment for ACL tears, ligament injuries, arthroscopy, and athletic rehabilitation.",
+    image: "/service-sports-injury.jpg",
+    alt: "Sports injury specialist in Hyderabad for ACL tears and ligament injuries",
+    link: "/sports-injury-specialist-hyderabad",
+  },
+  {
     title: "Knee & Hip Arthritis Treatment",
     description: "Comprehensive care for joint pain and arthritis using advanced treatment methods.",
     image: "/service-knee-hip.jpg",
