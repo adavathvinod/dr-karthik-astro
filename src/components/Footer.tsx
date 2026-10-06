@@ -114,10 +114,23 @@ export function Footer() {
           </div>
         </div>
 
-        {/* Copyright */}
-        <div className="mt-12 pt-8 border-t border-background/10 text-center">
-          <p className="text-background/50 text-sm">
+        {/* Copyright + Powered by */}
+        <div className="mt-12 pt-8 border-t border-background/10 flex flex-col sm:flex-row items-center justify-between gap-3 text-sm">
+          <p className="text-background/50">
             © {new Date().getFullYear()} Dr. Karthik Manchala Ortho Clinic. All rights reserved.
+          </p>
+          <p className="text-background/50">
+            Digital growth partner —{" "}
+            <a
+              href="https://www.wimira.com/"
+              target="_blank"
+              rel="noopener"
+              title="Wimira Digital — digital growth partner for web, UX/UI, SEO, GEO, content & technology"
+              aria-label="Digital growth partner Wimira Digital — web design, development, UX/UI, SEO, GEO and growth services"
+              className="text-primary hover:underline underline-offset-2 transition-colors font-medium"
+            >
+              Wimira Digital
+            </a>
           </p>
         </div>
       </div>
